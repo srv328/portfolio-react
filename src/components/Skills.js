@@ -6,8 +6,6 @@ function Skills() {
 			<ul>
 				<li>Чтение/написание документации</li>
 				<li>Хорошая математическая база</li>
-				<li>Чтение/написание документации</li>
-				<li>Хорошая математическая база</li>
 				<li><a href="https://github.com/srv328/web-development" target="_blank" rel="noopener noreferrer">Базовые навыки HTML/CSS/JavaScript/React.js, препроцессоры pug/stylus<BiLink /></a></li>
 				<li>Базовые навыки работы с 1С:Предприятие</li>
 				<li><a href="https://github.com/srv328/fundamental-algorithms-and-data-structures" target="_blank" rel="noopener noreferrer">Знание базовых алгоритмов и структур данных<BiLink /></a></li> 
