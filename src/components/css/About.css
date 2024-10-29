@@ -1,0 +1,20 @@
+.card {
+  background: linear-gradient(135deg, #222, #111);
+  border: none;
+  color: aliceblue;
+  font-size: 1.1rem;
+}
+
+.card a:visited {
+  color: #007bff;
+}
+
+.card a {
+  text-decoration: none;
+  color: #DC4C64 !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.card a:hover {
+  color: #a03939 !important;
+}

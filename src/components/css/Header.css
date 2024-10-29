@@ -1,0 +1,43 @@
+.nav-link {
+  display: inline-flex !important;
+  align-items: center;
+  color: #DC4C64;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:visited {
+  color: #DC4C64;
+}
+
+.nav-link:hover {
+  color: #a03939;
+}
+
+.nav-link > div {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link .fa-external-link-alt {
+  margin-left: 5px;
+  align-self: flex-start;
+}
+
+.custom-text p {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-left: 3px solid #007bff;
+  background-color: #f8f9fa;
+}
+
+.image-container {
+  position: relative;
+}
+
+.photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+

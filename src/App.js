@@ -1,36 +1,27 @@
-import React from "react";
-import Header from "./components/Header";
-import Activity from "./components/Activity";
-import ProfileImage from "./components/ProfileImage";
-import SocialLinks from "./components/SocialLinks";
-import AboutMe from "./components/AboutMe";
-import Experience from "./components/Experience";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import ExpandableSection from "./components/ExpandableSection";
+import React, { useState, useEffect } from 'react';
 import "./App.css";
+import Header from "./components/Header";
+import About from './components/About';
+import Skills from './components/Skills'
+import Footer from './components/Footer';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.body.className = isDarkMode ? 'bg-dark text-white' : 'bg-light text-dark';
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div>
-      <Header />
-      <div class="container">
-        <ProfileImage />
-        <SocialLinks />
-        <AboutMe />
-        <ExpandableSection title="Деятельность">
-          <Activity />
-        </ExpandableSection>
-        <ExpandableSection title="Опыт работы">
-          <Experience />
-        </ExpandableSection>
-        <ExpandableSection title="Навыки и технологии">
-          <Skills />
-        </ExpandableSection>
-        <Projects />
-      </div>
-      <Footer />
+    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      <About isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+	  <Skills isDarkMode={isDarkMode} toggleTheme={toggleTheme}/>
+	  <Footer isDarkMode={isDarkMode} toggleTheme={toggleTheme}/>
     </div>
   );
 }
