@@ -1,78 +1,84 @@
-import { Container, Nav, Button } from "react-bootstrap";
+import { Nav, Button } from "react-bootstrap";
 import {
   FaGithub,
-  FaVk,
+  FaEnvelope,
   FaTelegramPlane,
   FaExternalLinkAlt,
   FaSun,
   FaMoon,
 } from "react-icons/fa";
 import "./css/Header.css";
+import { useEffect, useState } from "react";
 
-const Header = ({ isDarkMode, toggleTheme }) => {
+const Header = ({ isDarkMode, toggleTheme, isScrolled }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const SocialLinks = () => (
+    <div className="social-links">
+      <Nav className="justify-content-center">
+        {[
+          {
+            href: "https://github.com/srv328",
+            icon: FaGithub,
+            text: isMobile ? "" : "GitHub",
+          },
+          {
+            href: "https://t.me/shevelev_rv",
+            icon: FaTelegramPlane,
+            text: isMobile ? "" : "Telegram",
+          },
+          {
+            href: "mailto:shevelev.rv328@gmail.com",
+            icon: FaEnvelope,
+            text: isMobile ? "" : "Почта",
+          },
+        ].map(({ href, icon: Icon, text }) => (
+          <Nav.Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            key={href}
+          >
+            <div className="social-link-content">
+              <Icon className="social-icon" />
+              {text && <span className="social-text">{text}</span>}
+              {!isMobile && <FaExternalLinkAlt className="external-icon" />}
+            </div>
+          </Nav.Link>
+        ))}
+      </Nav>
+    </div>
+  );
+
   return (
     <header
-      className={`text-center ${
-        isDarkMode ? "bg-dark text-white" : "bg-light text-dark"
+      className={`header ${isDarkMode ? "dark-mode" : "light-mode"} ${
+        isScrolled ? "scrolled" : ""
       }`}
     >
-      <div
-        className={`py-4 mb-4 bg-danger text-white position-relative`}
-      >
-        <h1 className="mb-0">Портфолио</h1>
-        <Button
-          variant={isDarkMode ? "light" : "dark"}
-          onClick={toggleTheme}
-          className="position-absolute top-50 end-0 translate-middle-y me-3"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {isDarkMode ? <FaSun /> : <FaMoon />}
-        </Button>
+      <div className="header-content">
+        <div className="header-top">
+          {!isMobile && <h1 className="header-title">srv328</h1>}
+          <SocialLinks />
+          <Button
+            variant={isDarkMode ? "light" : "dark"}
+            onClick={toggleTheme}
+            className="theme-toggle"
+          >
+            {isDarkMode ? <FaSun /> : <FaMoon />}
+          </Button>
+        </div>
       </div>
-      <Container>
-        <div className="image-container mb-3">
-          <img src="/img/photo.png" alt="Фото" className="photo" />
-        </div>
-        <div>
-          <Nav className="justify-content-center">
-            {[
-              {
-                href: "https://github.com/srv328",
-                icon: FaGithub,
-                text: "GitHub",
-              },
-              { href: "https://vk.com/id330036555", icon: FaVk, text: "VK" },
-              {
-                href: "https://t.me/shevelev_rv",
-                icon: FaTelegramPlane,
-                text: "Telegram",
-              },
-            ].map(({ href, icon: Icon, text }) => (
-				<Nav.Link
-                href={href}
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="mx-3 d-inline-flex align-items-center"
-                style={{ fontSize: "1.4rem" }}
-                key={text}
-              >
-                <div className="d-flex align-items-center">
-                  <Icon size={32} className="me-2" />
-                  <span>{text}</span>
-                </div>
-                <FaExternalLinkAlt
-                  size={18}
-                  className="ms-1 align-self-start"
-                />
-              </Nav.Link>
-            ))}
-          </Nav>
-        </div>
-      </Container>
     </header>
   );
 };
