@@ -6,8 +6,37 @@ import "./css/About.css";
 
 const About = () => {
   const [displayedText, setDisplayedText] = useState("");
+  const [typingComplete, setTypingComplete] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const personalInfo =
     "Роман, 20 лет. Студент 4 курса ДВФУ Института Математики и Компьютерных Технологий направления подготовки бакалавриата Программная инженерия. Учусь, пишу пет-проекты, работаю на фрилансе, открыт к коммерческим предложениям.";
+
+  useEffect(() => {
+    let textIndex = 0;
+    const typeInterval = setInterval(() => {
+      if (textIndex <= personalInfo.length) {
+        setDisplayedText(personalInfo.substring(0, textIndex));
+        textIndex++;
+      } else {
+        clearInterval(typeInterval);
+        setTypingComplete(true);
+      }
+    }, 20);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearInterval(typeInterval);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isMobile = windowWidth <= 768;
 
   const achievements = [
     {
@@ -73,47 +102,38 @@ const About = () => {
     );
   };
 
-  useEffect(() => {
-    function animateText() {
-      let textIndex = 0;
-      const textInterval = setInterval(() => {
-        setDisplayedText(personalInfo.substring(0, textIndex++));
-
-        if (textIndex > personalInfo.length) {
-          clearInterval(textInterval);
-        }
-      }, 40);
-    }
-
-    animateText();
-  }, []);
-
   return (
     <Container className="my-5">
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-4"
+        className="text-center mb-4 mt-4"
+        style={{ marginBottom: "2rem" }}
       >
         О себе
       </motion.h2>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="mb-5"
-        style={{ textIndent: "20px", margin: "0 auto", fontSize: "1.25rem" }} 
+      <div
+        className="typing-container mb-5"
+        style={{
+          textIndent: "20px",
+          fontSize: "1.25rem",
+          textAlign: isMobile ? "justify" : "left",
+          minHeight: "100px",
+        }}
       >
-        {displayedText}
-      </motion.p>
+        <span>{displayedText}</span>
+        <span
+          className={`cursor ${typingComplete ? "cursor-done" : ""}`}
+        ></span>
+      </div>
 
       <h3 className="text-center mb-4">Достижения</h3>
 
-      <Row className="text-white">
+      <Row className="text-white mb-1">
         {achievements.map((achievement, index) => (
-          <Col md={4} key={index} className="mb-4">
+          <Col md={4} key={index} className="mb-3">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -121,11 +141,16 @@ const About = () => {
             >
               <Card className="h-100">
                 <Card.Body>
-                  <Card.Title><strong>{achievement.category}</strong></Card.Title>
+                  <Card.Title
+                    className="card-title card-secondary-text"
+                    style={{ fontSize: "1.3rem" }}
+                  >
+                    <strong>{achievement.category}</strong>
+                  </Card.Title>
                   <Card.Text>
                     <ul className="list-unstyled">
                       {achievement.items.map((item, i) => (
-                        <li key={i} className="mb-2">
+                        <li key={i} className="mb-2 card-secondary-text">
                           {renderTextWithLink(
                             item.text,
                             item.link,

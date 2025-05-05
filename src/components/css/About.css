@@ -1,20 +1,124 @@
 .card {
-  background: linear-gradient(135deg, #222, #111);
-  border: none;
-  color: aliceblue;
-  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.47);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card.dark-mode {
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+.card.light-mode {
+  background: rgba(255, 255, 255, 0.2);
+  color: #212529;
 }
 
 .card a:visited {
-  color: #007bff;
+  color: #00b4d8;
 }
 
 .card a {
   text-decoration: none;
-  color: #DC4C64 !important;
-  transition: color 0.3s ease-in-out;
+  color: #00b4d8 !important;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: rgba(0, 180, 216, 0.1);
 }
 
 .card a:hover {
-  color: #a03939 !important;
+  color: #0077b6 !important;
+  background: rgba(0, 180, 216, 0.2);
+  transform: translateX(5px);
+}
+
+.card a i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card a:hover i {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.2rem;
+  }
+}
+
+.card-secondary-text {
+  color: rgba(0, 180, 216, 0.85);
+  font-size: 1rem;
+}
+.card.dark-mode .card-secondary-text {
+  color: #fff;
+  opacity: 0.8;
+}
+.card.light-mode .card-secondary-text {
+  color: #0077b6;
+  opacity: 0.9;
+}
+
+.typing-container {
+  position: relative;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .typing-container {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    word-spacing: -0.05em;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background-color: #00b4d8;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cursor-blink 0.8s infinite;
+}
+
+.cursor-done {
+  animation: cursor-fade-out 1s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
