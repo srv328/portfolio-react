@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Портфолио на React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Современное одностраничное портфолио, разработанное с использованием React и современных библиотек для создания интерактивного и привлекательного пользовательского опыта.
 
-## Available Scripts
+## 🌟 Особенности
 
-In the project directory, you can run:
+- **Современный дизайн** - использование стеклянного морфизма для создания эффекта глубины и современного внешнего вида
+- **Адаптивная верстка** - корректное отображение на всех устройствах (от мобильных до десктопов)
+- **Интерактивные элементы** - анимации при прокрутке и наведении для улучшения пользовательского опыта
+- **Темная/светлая тема** - переключение между темной и светлой темами для удобства просмотра
+- **Эффекты частиц** - динамический фон с эффектом частиц для более привлекательного внешнего вида
+- **Цифровой дождь** - интерактивный эффект "матричного дождя" для создания технологичного образа
 
-### `npm start`
+## 🛠️ Технологии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** - JavaScript библиотека для создания пользовательских интерфейсов
+- **React Bootstrap** - компонентная библиотека для быстрой и стилизованной верстки
+- **Framer Motion** - библиотека для создания анимаций
+- **React Icons** - набор иконок для улучшения UI/UX
+- **TsParticles** - библиотека для создания эффекта частиц на фоне
+- **CSS3** - для стилизации компонентов и создания эффектов
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Структура проекта
 
-### `npm test`
+```
+src/
+├── components/
+│   ├── About.jsx       - Компонент с информацией "О себе"
+│   ├── DigitalRain.js  - Эффект "цифрового дождя"
+│   ├── Footer.jsx      - Футер с контактной информацией
+│   ├── Header.jsx      - Адаптивный хедер с навигацией
+│   ├── ParticlesBackground.js - Фон с движущимися частицами
+│   ├── Projects.jsx    - Отображение коммерческих и некоммерческих проектов
+│   ├── Skills.jsx      - Блок с навыками и технологиями
+│   └── css/            - CSS стили для компонентов
+├── App.js              - Основной компонент приложения
+└── index.js            - Входная точка React-приложения
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Основные возможности и компоненты
 
-### `npm run build`
+### Header
+- Адаптивный дизайн
+- Скрытие элементов при прокрутке
+- Увеличенные иконки на мобильных устройствах для лучшей кликабельности
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### О себе
+- Эффект печатающегося текста
+- Выравнивание по ширине на мобильных устройствах
+- Анимация при появлении блока
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Навыки и технологии
+- Интерактивные карточки с эффектами при наведении
+- Адаптивная сетка с особой компоновкой последнего элемента
+- Категоризация технологий по типам
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Коммерческие проекты
+- Карточки с эффектом стеклянного морфизма
+- Анимация при наведении
+- Отображение подробной информации о проектах
 
-### `npm run eject`
+### Некоммерческие проекты
+- Отображение GitHub-проектов
+- Подробное описание используемых технологий
+- Адаптивная сетка с фулл-сайз отображением при нечетном количестве проектов
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Визуальные эффекты
+- Фон с анимированными частицами
+- Эффект "Матричного дождя"
+- Анимации появления элементов при прокрутке
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Установка и запуск
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/srv328/portfolio-react.git
+cd portfolio-react
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Установите зависимости:
+```bash
+npm install
+```
 
-## Learn More
+3. Запустите проект в режиме разработки:
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Сборка проекта
 
-### Code Splitting
+Для создания оптимизированной production-версии выполните:
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Собранный проект будет находиться в директории `build/`.
