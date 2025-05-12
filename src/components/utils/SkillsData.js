@@ -4,33 +4,27 @@ const skillsData = {
     skills: [
       {
         name: "JavaScript",
-        badge:
-          "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E",
+        badge: "/img/languages/javascript-323330.svg",
       },
       {
         name: "TypeScript",
-        badge:
-          "https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white",
+        badge: "/img/languages/typescript-007ACC.svg",
       },
       {
         name: "Python",
-        badge:
-          "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
+        badge: "/img/languages/python-3670A0.svg",
       },
       {
         name: "C#",
-        badge:
-          "https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white",
+        badge: "/img/languages/c-239120.svg",
       },
       {
         name: "C++",
-        badge:
-          "https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white",
+        badge: "/img/languages/c++-00599C.svg",
       },
       {
         name: "1С",
-        badge:
-          "https://img.shields.io/badge/1C:Предприятие-FFCB00?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAuNyAzLjVIMzQuN0wzOC4yIDdWMjUuMUgzMy4zVjlIMjQuOVYzMy41SDIwLjdWMy41WiIgZmlsbD0iIzAwMDAwMCIvPjxwYXRoIGQ9Ik05IDIyLjdIMjMuN0wyNS4yIDI2LjJWNDQuM0gyMC4zVjI4LjJIMTMuMlY0NC4zSDlWMjIuN1oiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4=&logoColor=black",
+        badge: "/img/languages/1C_Предприятие-FFCB00.svg",
       },
     ],
   },
@@ -40,48 +34,39 @@ const skillsData = {
     skills: [
       {
         name: "HTML5",
-        badge:
-          "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white",
+        badge: "/img/frontend/html5-E34F26.svg",
       },
       {
         name: "CSS3",
-        badge:
-          "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white",
+        badge: "/img/frontend/css3-1572B6.svg",
       },
       {
         name: "React",
-        badge:
-          "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+        badge: "/img/frontend/react-20232a.svg",
       },
       {
         name: "Vue.js",
-        badge:
-          "https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D",
+        badge: "/img/frontend/vue.js-35495e.svg",
       },
       {
         name: "Next JS",
-        badge:
-          "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+        badge: "/img/frontend/Next-black.svg",
       },
       {
         name: "Bootstrap",
-        badge:
-          "https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white",
+        badge: "/img/frontend/bootstrap-8511FA.svg",
       },
       {
         name: "TailwindCSS",
-        badge:
-          "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        badge: "/img/frontend/tailwindcss-38B2AC.svg",
       },
       {
         name: "MUI",
-        badge:
-          "https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white",
+        badge: "/img/frontend/MUI-0081CB.svg",
       },
       {
         name: "Stylus",
-        badge:
-          "https://img.shields.io/badge/stylus-%23ff6347.svg?style=for-the-badge&logo=stylus&logoColor=white",
+        badge: "/img/frontend/stylus-ff6347.svg",
       },
     ],
   },
@@ -91,48 +76,39 @@ const skillsData = {
     skills: [
       {
         name: "NodeJS",
-        badge:
-          "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white",
+        badge: "/img/backend/node.svg",
       },
       {
         name: "Express.js",
-        badge:
-          "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB",
+        badge: "/img/backend/express.js-404d59.svg",
       },
       {
         name: "NestJS",
-        badge:
-          "https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white",
+        badge: "/img/backend/nestjs-E0234E.svg",
       },
       {
         name: "Django",
-        badge:
-          "https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white",
+        badge: "/img/backend/django-092E20.svg",
       },
       {
         name: "DjangoREST",
-        badge:
-          "https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray",
+        badge: "/img/backend/DJANGO-REST-ff1709.svg",
       },
       {
         name: "FastAPI",
-        badge:
-          "https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi",
+        badge: "/img/backend/FastAPI-005571.svg",
       },
       {
         name: "Flask",
-        badge:
-          "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white",
+        badge: "/img/backend/flask-000.svg",
       },
       {
         name: ".Net",
-        badge:
-          "https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white",
+        badge: "/img/backend/NET-5C2D91.svg",
       },
       {
         name: "JWT",
-        badge:
-          "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens",
+        badge: "/img/backend/JWT-black.svg",
       },
     ],
   },
@@ -142,43 +118,35 @@ const skillsData = {
     skills: [
       {
         name: "MySQL",
-        badge:
-          "https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white",
+        badge: "/img/databases/mysql-4479A1.svg",
       },
       {
         name: "MongoDB",
-        badge:
-          "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
+        badge: "/img/databases/MongoDB-4ea94b.svg",
       },
       {
         name: "Postgres",
-        badge:
-          "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
+        badge: "/img/databases/postgres-316192.svg",
       },
       {
         name: "Redis",
-        badge:
-          "https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white",
+        badge: "/img/databases/redis-DD0031.svg",
       },
       {
         name: "SQLite",
-        badge:
-          "https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white",
+        badge: "/img/databases/sqlite-07405e.svg",
       },
       {
         name: "MariaDB",
-        badge:
-          "https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white",
+        badge: "/img/databases/MariaDB-003545.svg",
       },
       {
         name: "Microsoft SQL Server",
-        badge:
-          "https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white",
+        badge: "/img/databases/Microsoft SQL Server-CC2927.svg",
       },
       {
         name: "1С:Предприятие",
-        badge:
-          "https://img.shields.io/badge/1С:Предприятие-FFCB00?style=for-the-badge&logoColor=black",
+        badge: "/img/databases/1С_Предприятие-FFCB00.svg",
       },
     ],
   },
@@ -188,33 +156,27 @@ const skillsData = {
     skills: [
       {
         name: "NumPy",
-        badge:
-          "https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white",
+        badge: "/img/ml/numpy-013243.svg",
       },
       {
         name: "Pandas",
-        badge:
-          "https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white",
+        badge: "/img/ml/pandas-150458.svg",
       },
       {
         name: "scikit-learn",
-        badge:
-          "https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white",
+        badge: "/img/ml/scikit--learn-F7931E.svg",
       },
       {
         name: "SciPy",
-        badge:
-          "https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white",
+        badge: "/img/ml/SciPy-0C55A5.svg",
       },
       {
         name: "TensorFlow",
-        badge:
-          "https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white",
+        badge: "/img/ml/TensorFlow-FF6F00.svg",
       },
       {
         name: "Matplotlib",
-        badge:
-          "https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black",
+        badge: "/img/ml/Matplotlib-ffffff.svg",
       },
     ],
   },
@@ -224,33 +186,27 @@ const skillsData = {
     skills: [
       {
         name: "PyGame",
-        badge:
-          "https://img.shields.io/badge/PyGame-8BC63F?style=for-the-badge&logo=python&logoColor=white",
+        badge: "/img/python-tools/PyGame-8BC63F.svg",
       },
       {
         name: "AIOgram",
-        badge:
-          "https://img.shields.io/badge/AIOgram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white",
+        badge: "/img/python-tools/AIOgram-2CA5E0.svg",
       },
       {
         name: "FastAPI",
-        badge:
-          "https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white",
+        badge: "/img/python-tools/FastAPI-005571.svg",
       },
       {
         name: "Django",
-        badge:
-          "https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white",
+        badge: "/img/python-tools/django-092E20.svg",
       },
       {
         name: "Flask",
-        badge:
-          "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white",
+        badge: "/img/python-tools/flask-000.svg",
       },
       {
         name: "Web3.py",
-        badge:
-          "https://img.shields.io/badge/Web3.py-F16822?style=for-the-badge&logo=web3.js&logoColor=white",
+        badge: "/img/python-tools/Web3.svg",
       },
     ],
   },
@@ -260,58 +216,47 @@ const skillsData = {
     skills: [
       {
         name: "Git",
-        badge:
-          "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white",
+        badge: "/img/dev-tools/git-F05033.svg",
       },
       {
         name: "Docker",
-        badge:
-          "https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white",
+        badge: "/img/dev-tools/docker-0db7ed.svg",
       },
       {
         name: "NPM",
-        badge:
-          "https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white",
+        badge: "/img/dev-tools/NPM-CB3837.svg",
       },
       {
         name: "Yarn",
-        badge:
-          "https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white",
+        badge: "/img/dev-tools/yarn-2C8EBB.svg",
       },
       {
         name: "ESLint",
-        badge:
-          "https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white",
+        badge: "/img/dev-tools/ESLint-4B3263.svg",
       },
       {
         name: "Prettier",
-        badge:
-          "https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black",
+        badge: "/img/dev-tools/prettier-F7B93E.svg",
       },
       {
         name: "Webpack",
-        badge:
-          "https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black",
+        badge: "/img/dev-tools/webpack-8DD6F9.svg",
       },
       {
         name: "Gulp",
-        badge:
-          "https://img.shields.io/badge/GULP-%23CF4647.svg?style=for-the-badge&logo=gulp&logoColor=white",
+        badge: "/img/dev-tools/GULP-CF4647.svg",
       },
       {
         name: "Swagger",
-        badge:
-          "https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white",
+        badge: "/img/dev-tools/-Swagger-Clojure.svg",
       },
       {
         name: "Postman",
-        badge:
-          "https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white",
+        badge: "/img/dev-tools/Postman-FF6C37.svg",
       },
       {
         name: "Qt",
-        badge:
-          "https://img.shields.io/badge/Qt-%23217346.svg?style=for-the-badge&logo=Qt&logoColor=white",
+        badge: "/img/dev-tools/Qt-217346.svg",
       },
     ],
   },
@@ -321,48 +266,39 @@ const skillsData = {
     skills: [
       {
         name: "Nginx",
-        badge:
-          "https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white",
+        badge: "/img/other-tools/nginx-009639.svg",
       },
       {
         name: "Figma",
-        badge:
-          "https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white",
+        badge: "/img/other-tools/figma-F24E1E.svg",
       },
       {
         name: "Socket.io",
-        badge:
-          "https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101",
+        badge: "/img/other-tools/Socket.svg",
       },
       {
         name: "Web3.js",
-        badge:
-          "https://img.shields.io/badge/web3.js-F16822?style=for-the-badge&logo=web3.js&logoColor=white",
+        badge: "/img/other-tools/web3.svg",
       },
       {
         name: "Nodemon",
-        badge:
-          "https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD",
+        badge: "/img/other-tools/NODEMON-323330.svg",
       },
       {
         name: "PowerShell",
-        badge:
-          "https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white",
+        badge: "/img/other-tools/PowerShell-5391FE.svg",
       },
       {
         name: "Windows Terminal",
-        badge:
-          "https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white",
+        badge: "/img/other-tools/Windows Terminal-4D4D4D.svg",
       },
       {
         name: "Markdown",
-        badge:
-          "https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white",
+        badge: "/img/other-tools/markdown-000000.svg",
       },
       {
         name: "Bash Script",
-        badge:
-          "https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white",
+        badge: "/img/other-tools/bash_script-121011.svg",
       },
     ],
   },
@@ -372,23 +308,19 @@ const skillsData = {
     skills: [
       {
         name: "Jira",
-        badge:
-          "https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white",
+        badge: "/img/project-tools/jira-0A0FFF.svg",
       },
       {
         name: "Trello",
-        badge:
-          "https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white",
+        badge: "/img/project-tools/Trello-026AA7.svg",
       },
       {
         name: "Notion",
-        badge:
-          "https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white",
+        badge: "/img/project-tools/Notion-000000.svg",
       },
       {
         name: "Cisco",
-        badge:
-          "https://img.shields.io/badge/cisco-%23049fd9.svg?style=for-the-badge&logo=cisco&logoColor=black",
+        badge: "/img/project-tools/cisco-049fd9.svg",
       },
     ],
   },
