@@ -6,11 +6,17 @@ import {
   FaExternalLinkAlt,
   FaSun,
   FaMoon,
+  FaUser,
+  FaCode,
+  FaBriefcase,
+  FaProjectDiagram,
+  FaBars,
 } from "react-icons/fa";
+import { smoothScrollTo, smoothScrollToBottom } from "../utils/smoothScroll";
 import "./css/Header.css";
 import { useEffect, useState } from "react";
 
-const Header = ({ isDarkMode, toggleTheme, isScrolled }) => {
+const Header = ({ isDarkMode, toggleTheme, isScrolled, toggleMobileMenu }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -21,6 +27,38 @@ const Header = ({ isDarkMode, toggleTheme, isScrolled }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const scrollToSection = (sectionId) => {
+    if (sectionId === "contact") {
+      smoothScrollToBottom();
+    } else {
+      smoothScrollTo(sectionId);
+    }
+  };
+
+  const NavigationLinks = () => (
+    <div className="navigation-links">
+      <Nav className="justify-content-center">
+        {[
+          { id: "about", icon: FaUser, text: "О себе" },
+          { id: "skills", icon: FaCode, text: "Навыки" },
+          { id: "experience", icon: FaBriefcase, text: "Опыт" },
+          { id: "projects", icon: FaProjectDiagram, text: "Проекты" },
+        ].map(({ id, icon: Icon, text }) => (
+          <Nav.Link
+            onClick={() => scrollToSection(id)}
+            className="nav-link"
+            key={id}
+          >
+            <div className="nav-link-content">
+              <Icon className="nav-icon" />
+              {text && <span className="nav-text">{text}</span>}
+            </div>
+          </Nav.Link>
+        ))}
+      </Nav>
+    </div>
+  );
 
   const SocialLinks = () => (
     <div className="social-links">
@@ -67,17 +105,32 @@ const Header = ({ isDarkMode, toggleTheme, isScrolled }) => {
       }`}
     >
       <div className="header-content">
-        <div className="header-top">
-          {!isMobile && <h1 className="header-title">srv328</h1>}
-          <SocialLinks />
-          <Button
-            variant={isDarkMode ? "light" : "dark"}
-            onClick={toggleTheme}
-            className="theme-toggle"
-          >
-            {isDarkMode ? <FaSun /> : <FaMoon />}
-          </Button>
-        </div>
+        {isMobile ? (
+          <div className="header-top">
+            <SocialLinks />
+            <button
+              className="mobile-menu-button"
+              onClick={toggleMobileMenu}
+              aria-label="Открыть меню"
+            >
+              <FaBars />
+            </button>
+          </div>
+        ) : (
+          <div className="header-desktop">
+            <div className="header-logo">
+              <h1 className="header-title">srv328</h1>
+            </div>
+            <NavigationLinks />
+            <Button
+              variant={isDarkMode ? "light" : "dark"}
+              onClick={toggleTheme}
+              className="theme-toggle"
+            >
+              {isDarkMode ? <FaSun /> : <FaMoon />}
+            </Button>
+          </div>
+        )}
       </div>
     </header>
   );
