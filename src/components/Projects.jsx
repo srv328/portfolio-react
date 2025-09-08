@@ -3,10 +3,70 @@ import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { BiCalendar, BiCodeAlt } from "react-icons/bi";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import OptimizedImage from "./OptimizedImage";
 import "./css/Projects.css";
 
 const Projects = ({ isDarkMode }) => {
   const commercialProjects = [
+    {
+      title: "Агрегатор коммерческой недвижимости",
+      description:
+        "Агрегатор для коммерческой недвижимости, который помогает клиентам сдать или арендовать недвижимость в городе Петропавловск-Камчатский.",
+      image: "/img/projects/realty.png",
+      link: "https://arendakamchatka.com",
+      concept: "Простой и удобный интерфейс для сдачи и аренды недвижимости.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "styled-components",
+        "Figma",
+        "RuTube",
+        "Yandex Maps",
+      ],
+      completionDate: "Январь 2025",
+      role: "Full-stack разработчик",
+      features: [
+        "Формы обратной связи",
+        "Интеграция с RuTube",
+        "Четыре типа пользователей: администратор, субадмин (ограниченные права), менеджер, арендатор",
+        "Заявки приходят как администратору, так и менеджеру объектов",
+        "Личный кабинет пользователя",
+        "Интеграция с Яндекс.Картами",
+        "Функциональная админ-панель для управления контентом сайта (до 90%)",
+      ],
+    },
+    {
+      title: "Владивосток Авто - Импорт автомобилей",
+      description:
+        "Комплексная платформа для импорта и подбора автомобилей из Японии, Южной Кореи и Китая. Включает калькулятор таможенных платежей, просмотр договоров, формы заявок и интеграцию с курсами валют ЦБ РФ.",
+      image: "/img/projects/vladivostok-auto.png",
+      link: "https://vladivostok-auto.ru",
+      concept:
+        "Полнофункциональный сайт для компании по импорту и подбору автомобилей с современным дизайном, интерактивными формами и автоматизированными расчетами таможенных платежей.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "styled-components",
+        "Framer Motion",
+        "Axios",
+        "Cheerio",
+        "XML2JS",
+      ],
+      completionDate: "Август 2025",
+      role: "Full-stack разработчик",
+      features: [
+        "Интерактивный калькулятор таможенных платежей с интеграцией Drom.ru",
+        "Автоматическое получение курсов валют ЦБ РФ с кешированием",
+        "Интеграция с Telegram Bot API для уведомлений",
+        "Система rate limiting для защиты от спама",
+        "Поддержка свайпов на мобильных устройствах",
+        "Детализированные расчеты по странам с учетом специфики (JPY, KRW, CNY, USD, EUR)",
+        "Система fallback для расчетов при недоступности внешних API",
+      ],
+    },
     {
       title: "Онлайн-магазин",
       description:
@@ -33,61 +93,27 @@ const Projects = ({ isDarkMode }) => {
         "Автоматическая генерация sitemap.xml для SEO оптимизации",
       ],
     },
-    {
-      title: "Агрегатор коммерческой недвижимости",
-      description:
-        "Агрегатор для коммерческой недвижимости, который помогает клиентам сдать или арендовать недвижимость в городе Петропавловск-Камчатский.",
-      image: "/img/projects/realty.png",
-      link: "https://arendakamchatka.com",
-      concept: "Простой и удобный интерфейс для сдачи и аренды недвижимости.",
-      technologies: [
-        "React",
-        "Node.js",
-        "Express",
-        "MySQL",
-        "styled-components",
-        "Figma",
-      ],
-      completionDate: "Январь 2025",
-      role: "Full-stack разработчик",
-      features: [
-        "Формы обратной связи",
-        "Четыре типа пользователей: администратор, субадмин (ограниченные права), менеджер, арендатор",
-        "Заявки приходят как администратору, так и менеджеру объектов",
-        "Личный кабинет пользователя",
-        "Интеграция с Яндекс.Картами",
-        "Функциональная админ-панель для управления контентом сайта (до 90%)",
-      ],
-    },
   ];
 
   const personalProjects = [
     {
-      title: "Система управления базой данных АЗС",
+      title: "Генератор красивых Ethereum адресов",
       description:
-        "Приложение для управления данными автозаправочных станций с возможностью мониторинга продаж топлива и управления клиентами.",
-      image: "/img/projects/gasstation.png",
-      github: "https://github.com/srv328/gasstation-database-management",
+        "Инструмент для генерации Ethereum адресов с заданными префиксами, вхождениями или суффиксами.",
+      image: "/img/projects/ethereum.png",
+      github: "https://github.com/srv328/eth-beautiful-address-generator",
       concept:
-        "Комплексная система для администрирования данных автозаправочных станций с разделением прав доступа и функциональным интерфейсом.",
-      technologies: [
-        "C# .NET Framework 4.7.2",
-        "Windows Forms",
-        "MySQL",
-        "ADO.NET",
-        "MySql.Data (Connector/NET)",
-        "System.Windows.Forms",
-      ],
-      completionDate: "Январь 2024",
-      role: "Разработчик базы данных и приложения",
+        "Утилита для криптоэнтузиастов, позволяющая генерировать Ethereum кошельки с красивыми или запоминающимися адресами, сохраняя при этом доступ к мнемоническим фразам.",
+      technologies: ["Python", "eth_account", "bip_utils", "threading"],
+      completionDate: "Июнь 2024",
+      role: "Backend разработчик",
       features: [
-        "Авторизация пользователей с разными уровнями доступа (админ, представитель фирмы, клиент)",
-        "Управление данными АЗС, фирм и клиентов",
-        "Мониторинг продаж топлива",
-        "Интерактивный интерфейс для работы с данными",
-        "Каскадное удаление связанных записей",
-        "Валидация вводимых данных",
-        "Защита от SQL-инъекций",
+        "Многопоточная генерация для повышения производительности",
+        "Поиск адресов по префиксу (начало адреса)",
+        "Поиск адресов по вхождению (любая часть адреса)",
+        "Поиск адресов по суффиксу (конец адреса)",
+        "Выбор длины мнемонической фразы (12 или 24 слова)",
+        "Автоматическое сохранение результатов в файл wallets.txt",
       ],
     },
     {
@@ -122,23 +148,31 @@ const Projects = ({ isDarkMode }) => {
       ],
     },
     {
-      title: "Генератор красивых Ethereum адресов",
+      title: "Система управления базой данных АЗС",
       description:
-        "Инструмент для генерации Ethereum адресов с заданными префиксами, вхождениями или суффиксами.",
-      image: "/img/projects/ethereum.png",
-      github: "https://github.com/srv328/eth-beautiful-address-generator",
+        "Приложение для управления данными автозаправочных станций с возможностью мониторинга продаж топлива и управления клиентами.",
+      image: "/img/projects/gasstation.png",
+      github: "https://github.com/srv328/gasstation-database-management",
       concept:
-        "Утилита для криптоэнтузиастов, позволяющая генерировать Ethereum кошельки с красивыми или запоминающимися адресами, сохраняя при этом доступ к мнемоническим фразам.",
-      technologies: ["Python", "eth_account", "bip_utils", "threading"],
-      completionDate: "Июнь 2024",
-      role: "Backend разработчик",
+        "Комплексная система для администрирования данных автозаправочных станций с разделением прав доступа и функциональным интерфейсом.",
+      technologies: [
+        "C# .NET Framework 4.7.2",
+        "Windows Forms",
+        "MySQL",
+        "ADO.NET",
+        "MySql.Data (Connector/NET)",
+        "System.Windows.Forms",
+      ],
+      completionDate: "Январь 2024",
+      role: "Разработчик базы данных и приложения",
       features: [
-        "Многопоточная генерация для повышения производительности",
-        "Поиск адресов по префиксу (начало адреса)",
-        "Поиск адресов по вхождению (любая часть адреса)",
-        "Поиск адресов по суффиксу (конец адреса)",
-        "Выбор длины мнемонической фразы (12 или 24 слова)",
-        "Автоматическое сохранение результатов в файл wallets.txt",
+        "Авторизация пользователей с разными уровнями доступа (админ, представитель фирмы, клиент)",
+        "Управление данными АЗС, фирм и клиентов",
+        "Мониторинг продаж топлива",
+        "Интерактивный интерфейс для работы с данными",
+        "Каскадное удаление связанных записей",
+        "Валидация вводимых данных",
+        "Защита от SQL-инъекций",
       ],
     },
     {
@@ -190,82 +224,85 @@ const Projects = ({ isDarkMode }) => {
   // Варианты анимаций для разных элементов
   const titleAnimation = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   const descriptionAnimation = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } },
   };
 
   const conceptAnimation = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      transition: { 
-        duration: 0.4, 
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.4,
         delay: 0.3,
         type: "spring",
-        stiffness: 100
-      } 
-    }
+        stiffness: 100,
+      },
+    },
   };
 
   const metaAnimation = {
     hidden: { opacity: 0, x: 30 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.4 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.4 } },
   };
 
   const techAnimation = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { 
-      staggerChildren: 0.1, 
-      delayChildren: 0.5,
-      duration: 0.3 
-    } }
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.5,
+        duration: 0.3,
+      },
+    },
   };
 
   const techItemAnimation = {
     hidden: { opacity: 0, scale: 0.8, y: 10 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
+    visible: {
+      opacity: 1,
+      scale: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 200 }
-    }
+      transition: { type: "spring", stiffness: 200 },
+    },
   };
 
   const featuresAnimation = {
     hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1, 
-      transition: { 
+    visible: {
+      opacity: 1,
+      transition: {
         staggerChildren: 0.1,
         delayChildren: 0.6,
-        when: "beforeChildren"
-      } 
-    }
+        when: "beforeChildren",
+      },
+    },
   };
 
   const featureItemAnimation = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
 
   // Общий компонент для отображения карточки проекта
   const ProjectCard = ({ project, index, isLast, totalCount }) => {
     const isFullWidth = isLast && totalCount % 2 !== 0;
-    
+
     const cardContent = (
       <>
         {isFullWidth ? (
           <Row className="g-0">
             <Col lg={6} md={12}>
               <div className="project-image-container full-width-image">
-                <Card.Img
-                  variant="top"
+                <OptimizedImage
                   src={project.image}
+                  alt={project.title}
                   className="project-image"
                 />
                 <div className="project-overlay">
@@ -296,7 +333,11 @@ const Projects = ({ isDarkMode }) => {
             </Col>
             <Col lg={6} md={12}>
               <Card.Body>
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
                   <motion.div variants={titleAnimation}>
                     <Card.Title className="project-title">
                       {project.title}
@@ -309,7 +350,10 @@ const Projects = ({ isDarkMode }) => {
                     </Card.Text>
                   </motion.div>
 
-                  <motion.div className="project-concept" variants={conceptAnimation}>
+                  <motion.div
+                    className="project-concept"
+                    variants={conceptAnimation}
+                  >
                     <h6 className="concept-title">Концепция:</h6>
                     <p>{project.concept}</p>
                   </motion.div>
@@ -325,17 +369,21 @@ const Projects = ({ isDarkMode }) => {
                     </div>
                   </motion.div>
 
-                  <motion.div className="project-technologies" variants={techAnimation}>
+                  <motion.div
+                    className="project-technologies"
+                    variants={techAnimation}
+                  >
                     {project.technologies.map((tech, i) => (
                       <motion.span key={i} variants={techItemAnimation}>
-                        <Badge className="tech-badge">
-                          {tech}
-                        </Badge>
+                        <Badge className="tech-badge">{tech}</Badge>
                       </motion.span>
                     ))}
                   </motion.div>
 
-                  <motion.div className="project-features" variants={featuresAnimation}>
+                  <motion.div
+                    className="project-features"
+                    variants={featuresAnimation}
+                  >
                     <h6>Ключевые особенности:</h6>
                     <ul>
                       {project.features.map((feature, i) => (
@@ -352,9 +400,9 @@ const Projects = ({ isDarkMode }) => {
         ) : (
           <>
             <div className="project-image-container">
-              <Card.Img
-                variant="top"
+              <OptimizedImage
                 src={project.image}
+                alt={project.title}
                 className="project-image"
               />
               <div className="project-overlay">
@@ -383,7 +431,11 @@ const Projects = ({ isDarkMode }) => {
               </div>
             </div>
             <Card.Body>
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
                 <motion.div variants={titleAnimation}>
                   <Card.Title className="project-title">
                     {project.title}
@@ -396,7 +448,10 @@ const Projects = ({ isDarkMode }) => {
                   </Card.Text>
                 </motion.div>
 
-                <motion.div className="project-concept" variants={conceptAnimation}>
+                <motion.div
+                  className="project-concept"
+                  variants={conceptAnimation}
+                >
                   <h6 className="concept-title">Концепция:</h6>
                   <p>{project.concept}</p>
                 </motion.div>
@@ -412,17 +467,21 @@ const Projects = ({ isDarkMode }) => {
                   </div>
                 </motion.div>
 
-                <motion.div className="project-technologies" variants={techAnimation}>
+                <motion.div
+                  className="project-technologies"
+                  variants={techAnimation}
+                >
                   {project.technologies.map((tech, i) => (
                     <motion.span key={i} variants={techItemAnimation}>
-                      <Badge className="tech-badge">
-                        {tech}
-                      </Badge>
+                      <Badge className="tech-badge">{tech}</Badge>
                     </motion.span>
                   ))}
                 </motion.div>
 
-                <motion.div className="project-features" variants={featuresAnimation}>
+                <motion.div
+                  className="project-features"
+                  variants={featuresAnimation}
+                >
                   <h6>Ключевые особенности:</h6>
                   <ul>
                     {project.features.map((feature, i) => (
