@@ -4,13 +4,16 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 import Footer from "./components/Footer";
+import MobileNavigation from "./components/MobileNavigation";
 import ParticlesBackground from "./components/ParticlesBackground";
 import DigitalRain from "./components/DigitalRain";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,6 +36,14 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className={`App ${isDarkMode ? "dark-mode" : "light-mode"}`}>
       <DigitalRain isDarkMode={isDarkMode} />
@@ -41,19 +52,31 @@ function App() {
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
         isScrolled={isScrolled}
+        toggleMobileMenu={toggleMobileMenu}
+      />
+      <MobileNavigation 
+        isDarkMode={isDarkMode} 
+        toggleTheme={toggleTheme}
+        isOpen={isMobileMenuOpen}
+        onClose={closeMobileMenu}
       />
       <main className="sections-container">
-        <section className="section about-section">
+        <section id="about" className="section about-section">
           <About isDarkMode={isDarkMode} />
         </section>
-        <section className="section skills-section">
+        <section id="skills" className="section skills-section">
           <Skills isDarkMode={isDarkMode} />
         </section>
-        <section className="section projects-section">
+        <section id="experience" className="section experience-section">
+          <Experience isDarkMode={isDarkMode} />
+        </section>
+        <section id="projects" className="section projects-section">
           <Projects isDarkMode={isDarkMode} />
         </section>
       </main>
-      <Footer isDarkMode={isDarkMode} />
+      <section id="contact">
+        <Footer isDarkMode={isDarkMode} />
+      </section>
     </div>
   );
 }
