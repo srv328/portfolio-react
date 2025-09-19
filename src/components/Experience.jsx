@@ -19,8 +19,13 @@ const Experience = ({ isDarkMode }) => {
       description:
         "Изучение основ программирования, алгоритмов, структур данных, веб-разработки и управления проектами.",
       technologies: [
+        "JavaScript",
+		"Python",
         "C++",
-        "Java",
+		"C#",	
+		"SQL",
+		"NoSQL",
+		"Git",
         "Web Development",
         "Algorithms",
         "Data Structures",
@@ -50,7 +55,7 @@ const Experience = ({ isDarkMode }) => {
         "Mathematical Modeling",
       ],
       icon: FaGraduationCap,
-      achievements: [],
+      achievements: ["Обработка данных", "Машинное обучение", "Математическое моделирование"],
     },
     {
       type: "work",

@@ -8,6 +8,8 @@
   overflow: hidden;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Специальные стили для карточек с персональными проектами */
@@ -89,6 +91,34 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+/* Унификация контента в карточках */
+.project-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.project-card .project-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .project-features ul {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Выравнивание элементов в карточках */
+.project-card .project-technologies {
+  margin-bottom: 1rem;
+}
+
+.project-card .project-meta {
+  margin-bottom: 1rem;
 }
 
 .project-image {
@@ -410,6 +440,7 @@
     min-height: 400px;
   }
   
+  
   .project-card:has(.personal-project) .card-body {
     padding-left: 1.5rem;
   }
@@ -448,6 +479,7 @@
   .project-card:has(.personal-project) {
     min-height: 450px;
   }
+  
   
   .project-card:has(.personal-project) .card-body {
     padding-left: 1rem;
@@ -578,6 +610,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex: 1;
 }
 
 .full-width-card .row {
@@ -588,6 +621,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
+}
+
+/* Выравнивание контента в полной ширине карточек */
+.full-width-card .project-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width-card .project-features ul {
+  flex: 1;
+  margin-bottom: 0;
 }
 
 /* Десктопная версия - 2 колонки: картинка+доп материалы слева, описание справа */

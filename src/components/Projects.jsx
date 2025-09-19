@@ -109,6 +109,32 @@ const Projects = ({ isDarkMode }) => {
         }
       ],
     },
+    {
+      title: "OurVision SMM Studio",
+      description:
+        "Сайт SMM-студии OurVision, специализирующейся на продвижении в социальных сетях, создании контента и управлении репутацией брендов.",
+      image: "/img/projects/ourvision.png",
+      link: "https://ourvision.pro",
+      concept:
+        "Профессиональный сайт SMM-студии с современным дизайном, портфолио работ и удобной системой заказа услуг для клиентов.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "styled-components",
+        "Framer Motion",
+        "Figma",
+      ],
+      completionDate: "Март 2025",
+      role: "Администратор",
+      features: [
+        "Адаптивный дизайн для всех устройств",
+        "Портфолио работ с фильтрацией по категориям",
+        "Система управления контентом",
+        "Система заказа услуг онлайн",
+      ],
+    },
   ];
 
   const personalProjects = [

@@ -20,7 +20,7 @@ const Skills = ({ isDarkMode }) => {
         initial={{ opacity: 0, y: -50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-4"
+        className="text-center mb-4 section-title"
       >
         Навыки и технологии
       </motion.h2>

@@ -122,3 +122,228 @@
     opacity: 0;
   }
 }
+
+/* Современные стили для блока достижений */
+.achievements-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3rem !important;
+}
+
+.achievement-card-wrapper {
+  height: 100%;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00b4d8, #0077b6, #ff6b6b);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 180, 216, 0.3);
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.achievement-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.achievement-category {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  flex: 1;
+}
+
+.achievement-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.achievement-item-wrapper {
+  position: relative;
+}
+
+.achievement-item {
+  position: relative;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.achievement-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 180, 216, 0.2);
+  transform: translateX(5px);
+}
+
+.achievement-content {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  padding-right: 4rem;
+}
+
+.achievement-link {
+  color: #00b4d8 !important;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(0, 180, 216, 0.1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0.25rem;
+}
+
+.achievement-link:hover {
+  color: #0077b6 !important;
+  background: rgba(0, 180, 216, 0.2);
+  transform: translateY(-1px);
+}
+
+.link-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.achievement-link:hover .link-icon {
+  transform: translateX(2px);
+}
+
+.achievement-year {
+  background: linear-gradient(135deg, #00b4d8, #0077b6) !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* Абсолютно позиционированный бейдж года для каждого достижения */
+.achievement-item .achievement-year-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 180, 216, 0.3);
+  z-index: 10;
+  transition: all 0.3s ease;	
+}
+
+.achievement-item:hover .achievement-year-badge {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);
+}
+
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .achievements-title {
+    font-size: 2rem;
+    margin-bottom: 2rem !important;
+  }
+  
+  .achievement-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .achievement-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .achievement-category {
+    font-size: 1.2rem;
+  }
+  
+  .achievement-item {
+    text-align: center;
+  }
+  
+  .achievement-item .achievement-year-badge {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+	opacity: 0.7;
+  }
+  
+  .achievement-content {
+    padding-right: 1rem;
+  }
+  
+  .achievement-items {
+    justify-content: flex-start;
+  }
+}
