@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useRef } from "react";
 
 const OptimizedImage = ({ 
   src, 
@@ -11,20 +10,6 @@ const OptimizedImage = ({
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const imgRef = useRef(null);
-  
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  useEffect(() => {
-    if (inView && !imageLoaded && !imageError) {
-      const img = new Image();
-      img.onload = () => setImageLoaded(true);
-      img.onerror = () => setImageError(true);
-      img.src = src;
-    }
-  }, [inView, src, imageLoaded, imageError]);
 
   const handleLoad = () => {
     setImageLoaded(true);
@@ -35,7 +20,7 @@ const OptimizedImage = ({
   };
 
   return (
-    <div ref={ref} className={`optimized-image-container ${className}`}>
+    <div className={`optimized-image-container ${className}`}>
       {!imageLoaded && !imageError && (
         <img
           src={placeholder}
@@ -45,18 +30,15 @@ const OptimizedImage = ({
         />
       )}
       
-      {imageLoaded && (
-        <img
-          ref={imgRef}
-          src={src}
-          alt={alt}
-          className={`optimized-image ${imageLoaded ? "loaded" : ""}`}
-          onLoad={handleLoad}
-          onError={handleError}
-          loading="lazy"
-          {...props}
-        />
-      )}
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={`optimized-image ${imageLoaded ? "loaded" : ""}`}
+        onLoad={handleLoad}
+        onError={handleError}
+        {...props}
+      />
       
       {imageError && (
         <div className="image-error">

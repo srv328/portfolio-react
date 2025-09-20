@@ -2,12 +2,81 @@ import React from "react";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { BiCalendar, BiCodeAlt } from "react-icons/bi";
-import { FaExternalLinkAlt, FaGithub, FaPlay, FaNewspaper } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaPlay, FaNewspaper, FaTelegram } from "react-icons/fa";
 import OptimizedImage from "./OptimizedImage";
 import "./css/Projects.css";
 
 const Projects = ({ isDarkMode }) => {
   const commercialProjects = [
+    {
+      title: "Онлайн-магазин",
+      description:
+        "Цифровая версия настоящего рынка в городе Петропавловск-Камчатский. Платформа для продажи продуктов питания, одежды, обуви, игрушек, и многого другого.",
+      image: "/img/projects/kammarket.png",
+      link: "https://kammarket.com",
+      concept:
+        "Оцифрованный рынок в городе Петропавловск-Камчатский. Покупатели и продавцы могут взаимодействовать друг с другом, общаться, просматривать и покупать товары.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "styled-components",
+      ],
+      completionDate: "Сентябрь 2024",
+      role: "Full-stack разработчик",
+      features: [
+        "Полное управление товарами и категориями",
+        "Управление заказами и доставками",
+        "Четыре типа пользователей: администратор, продавец, покупатель, курьер",
+        "Личный кабинет пользователя",
+        "Корзина покупок с сохранением между сессиями",
+        "Автоматическая генерация sitemap.xml для SEO оптимизации",
+      ],
+      mediaLinks: [
+        {
+          title: "Интервью на Радио Камчатка",
+          url: "https://t.me/radiokamchatka/8020",
+          platform: "Telegram",
+          description: "Рассказ о создании и развитии проекта",
+          icon: "📻"
+        },
+        {
+          title: "Статья в Масс-медиа Камчатка",
+          url: "https://t.me/massmediakam/22809",
+          platform: "Telegram",
+          description: "Подробный обзор проекта и его возможностей",
+          icon: "📰"
+        }
+      ],
+      isKammarket: true,
+    },
+    {
+      title: "OurVision SMM Studio",
+      description:
+        "Сайт SMM-студии OurVision, специализирующейся на продвижении в социальных сетях, создании контента и управлении репутацией брендов.",
+      image: "/img/projects/ourvision.png",
+      link: "https://ourvision.pro",
+      concept:
+        "Профессиональный сайт SMM-студии с современным дизайном, портфолио работ и удобной системой заказа услуг для клиентов.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "styled-components",
+        "Framer Motion",
+        "Figma",
+      ],
+      completionDate: "Март 2025",
+      role: "Администратор",
+      features: [
+        "Адаптивный дизайн для всех устройств",
+        "Портфолио работ с фильтрацией по категориям",
+        "Система управления контентом",
+        "Система заказа услуг онлайн",
+      ],
+    },
     {
       title: "Агрегатор коммерческой недвижимости",
       description:
@@ -65,74 +134,6 @@ const Projects = ({ isDarkMode }) => {
         "Поддержка свайпов на мобильных устройствах",
         "Детализированные расчеты по странам с учетом специфики (JPY, KRW, CNY, USD, EUR)",
         "Система fallback для расчетов при недоступности внешних API",
-      ],
-    },
-    {
-      title: "Онлайн-магазин",
-      description:
-        "Цифровая версия настоящего рынка в городе Петропавловск-Камчатский. Платформа для продажи продуктов питания, одежды, обуви, игрушек, и многого другого.",
-      image: "/img/projects/kammarket.png",
-      link: "https://kammarket.com",
-      concept:
-        "Оцифрованный рынок в городе Петропавловск-Камчатский. Покупатели и продавцы могут взаимодействовать друг с другом, общаться, просматривать и покупать товары.",
-      technologies: [
-        "React",
-        "Node.js",
-        "Express",
-        "MySQL",
-        "styled-components",
-      ],
-      completionDate: "Сентябрь 2024",
-      role: "Full-stack разработчик",
-      features: [
-        "Полное управление товарами и категориями",
-        "Управление заказами и доставками",
-        "Четыре типа пользователей: администратор, продавец, покупатель, курьер",
-        "Личный кабинет пользователя",
-        "Корзина покупок с сохранением между сессиями",
-        "Автоматическая генерация sitemap.xml для SEO оптимизации",
-      ],
-      mediaLinks: [
-        {
-          title: "Интервью на Радио Камчатка",
-          url: "https://t.me/radiokamchatka/8020",
-          platform: "Telegram",
-          description: "Рассказ о создании и развитии проекта",
-          icon: "📻"
-        },
-        {
-          title: "Статья в Масс-медиа Камчатка",
-          url: "https://t.me/massmediakam/22809",
-          platform: "Telegram",
-          description: "Подробный обзор проекта и его возможностей",
-          icon: "📰"
-        }
-      ],
-    },
-    {
-      title: "OurVision SMM Studio",
-      description:
-        "Сайт SMM-студии OurVision, специализирующейся на продвижении в социальных сетях, создании контента и управлении репутацией брендов.",
-      image: "/img/projects/ourvision.png",
-      link: "https://ourvision.pro",
-      concept:
-        "Профессиональный сайт SMM-студии с современным дизайном, портфолио работ и удобной системой заказа услуг для клиентов.",
-      technologies: [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "styled-components",
-        "Framer Motion",
-        "Figma",
-      ],
-      completionDate: "Март 2025",
-      role: "Администратор",
-      features: [
-        "Адаптивный дизайн для всех устройств",
-        "Портфолио работ с фильтрацией по категориям",
-        "Система управления контентом",
-        "Система заказа услуг онлайн",
       ],
     },
   ];
@@ -261,6 +262,7 @@ const Projects = ({ isDarkMode }) => {
         "Стеклянный морфизм для элементов интерфейса",
       ],
       isPersonalProject: true,
+	  isPortfolio: true,
     },
   ];
 
@@ -340,7 +342,7 @@ const Projects = ({ isDarkMode }) => {
     const getIcon = (platform) => {
       switch (platform) {
         case 'Telegram':
-          return <FaPlay className="media-icon" />;
+          return <FaTelegram className="media-icon" />;
         case 'YouTube':
           return <FaPlay className="media-icon" />;
         case 'Article':
@@ -377,7 +379,6 @@ const Projects = ({ isDarkMode }) => {
                 <div className="media-link-text">
                   <div className="media-link-title">{mediaLink.title}</div>
                   <div className="media-link-description">{mediaLink.description}</div>
-                  <div className="media-link-platform">{mediaLink.platform}</div>
                 </div>
               </div>
             </motion.a>
@@ -389,7 +390,7 @@ const Projects = ({ isDarkMode }) => {
 
   // Общий компонент для отображения карточки проекта
   const ProjectCard = ({ project, index, isLast, totalCount }) => {
-    const isFullWidth = isLast && totalCount % 2 !== 0;
+    const isFullWidth = (isLast && totalCount % 2 !== 1) || project.isKammarket || project.isPortfolio;
 
     const cardContent = (
       <>
@@ -400,7 +401,9 @@ const Projects = ({ isDarkMode }) => {
               <Row className="g-0">
                 <Col lg={6} md={12}>
                   <div className="desktop-left-column">
-                    <div className="project-image-container full-width-image">
+                    <div className={`project-image-container full-width-image ${
+                      project.isKammarket || project.isPortfolio || project.title === "Владивосток Авто - Импорт автомобилей" ? 'square-logo' : ''
+                    }`}>
                       <OptimizedImage
                         src={project.image}
                         alt={project.title}
@@ -508,7 +511,9 @@ const Projects = ({ isDarkMode }) => {
             <div className="mobile-full-width-layout">
               <Row className="g-0">
                 <Col lg={6} md={12}>
-                  <div className="project-image-container full-width-image">
+                  <div className={`project-image-container full-width-image ${
+                    project.isKammarket || project.isPortfolio || project.title === "Владивосток Авто - Импорт автомобилей" ? 'square-logo' : ''
+                  }`}>
                     <OptimizedImage
                       src={project.image}
                       alt={project.title}
@@ -612,7 +617,9 @@ const Projects = ({ isDarkMode }) => {
           </>
         ) : (
           <>
-            <div className={`project-image-container ${project.isPersonalProject ? 'personal-project' : ''}`}>
+            <div className={`project-image-container ${project.isPersonalProject ? 'personal-project' : ''} ${
+              project.isKammarket || project.isPortfolio || project.title === "Владивосток Авто - Импорт автомобилей" ? 'square-logo' : ''
+            }`}>
               <OptimizedImage
                 src={project.image}
                 alt={project.title}
@@ -715,7 +722,7 @@ const Projects = ({ isDarkMode }) => {
 
     return (
       <Col
-        lg={isFullWidth ? 12 : 6}
+        lg={project.isKammarket ? 12 : (isFullWidth ? 12 : 6)}
         md={12}
         sm={12}
         key={index}
@@ -730,7 +737,9 @@ const Projects = ({ isDarkMode }) => {
           <Card
             className={`project-card h-100 ${
               isDarkMode ? "dark-mode" : "light-mode"
-            } ${isFullWidth ? "full-width-card" : ""}`}
+            } ${isFullWidth ? "full-width-card" : ""} ${
+              project.isKammarket ? "kammarket-card" : ""
+            }`}
           >
             {cardContent}
           </Card>

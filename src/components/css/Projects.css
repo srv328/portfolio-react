@@ -12,6 +12,130 @@
   flex-direction: column;
 }
 
+/* Специальные стили для карточки Каммаркет */
+.kammarket-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(0, 180, 216, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45), 0 0 15px 5px rgba(0, 180, 216, 0.2);
+  position: relative;
+  z-index: 2;
+  animation: kammarket-glow 3s infinite alternate;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+@keyframes kammarket-glow {
+  0% {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45), 0 0 15px 5px rgba(0, 180, 216, 0.2);
+  }
+  100% {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45), 0 0 25px 8px rgba(0, 180, 216, 0.4);
+  }
+}
+
+.kammarket-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 60%);
+  opacity: 1;
+  transform: scale(1);
+  z-index: -1;
+}
+
+.kammarket-card:hover {
+  box-shadow: 0 20px 50px 0 rgba(0, 180, 216, 0.4);
+  border-color: rgba(0, 180, 216, 0.6);
+}
+
+.kammarket-card .project-title {
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #0077b6, #00b4d8, #90e0ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.kammarket-card .project-title::after {
+  content: '★';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00b4d8;
+  font-size: 1.2rem;
+  animation: star-pulse 1.5s infinite alternate;
+}
+
+@keyframes star-pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-50%) scale(1.3);
+    opacity: 1;
+  }
+}
+
+.kammarket-card .project-description {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.kammarket-card .project-image-container {
+  height: 300px; /* Стандартная высота для согласованности */
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.03); /* Легкий фон для контейнера */
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+}
+
+.kammarket-card .project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.kammarket-card .project-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Добавляем класс для квадратных логотипов - с высоким приоритетом */
+.square-logo .project-image-container {
+  background-color: rgba(0, 0, 0, 0.02);
+  width: 300px !important; /* Фиксированная ширина равная высоте */
+  height: 300px !important; /* Фиксированная высота */
+  aspect-ratio: auto !important; /* Отключаем автоматическое соотношение сторон */
+  max-width: 300px !important; /* Ограничиваем максимальную ширину */
+  min-width: 300px !important; /* Устанавливаем минимальную ширину */
+  padding: 0 !important; /* Убираем отступы */
+  margin: 0 auto !important; /* Центрируем */
+  box-sizing: border-box !important; /* Учитываем границы в размерах */
+}
+
 /* Специальные стили для карточек с персональными проектами */
 .project-card:has(.personal-project) {
   display: flex;
@@ -41,7 +165,6 @@
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5);
   border-color: rgba(0, 180, 216, 0.3);
 }
@@ -58,21 +181,27 @@
 
 .project-image-container {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Важно! Скрывает всё, что выходит за пределы контейнера */
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 350px; /* Стандартная высота для всех контейнеров изображений */
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.03); /* Легкий фон для контейнера */
 }
 
 /* Специальные стили для персональных проектов */
 .project-image-container.personal-project {
-  height: 400px;
-  width: 400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  height: 300px; /* Та же высота для согласованности */
+  width: 300px; /* Фиксированная ширина */
+  background-color: rgba(0, 0, 0, 0.03); /* Легкий фон для контейнера */
+  border-radius: 15px; /* Скругление углов */
+  padding: 0 !important; /* Убираем отступы */
 }
 
 /* Стили для текстового контента персональных проектов */
@@ -122,11 +251,25 @@
 }
 
 .project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%; /* Уменьшаем до 80%, чтобы точно не выходило за границы */
+  max-height: 100%; /* Уменьшаем до 80%, чтобы точно не выходило за границы */
+  object-fit: contain;
   object-position: center;
   transition: transform 0.5s ease;
+}
+
+/* Стили для квадратных логотипов */
+.square-logo .project-image {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  aspect-ratio: 1/1 !important; /* Сохраняем квадратные пропорции */
+  padding: 0 !important; /* Убираем все отступы */
+  margin: 0 !important; /* Убираем все отступы */
 }
 
 .optimized-image-container {
@@ -136,17 +279,21 @@
 }
 
 .image-placeholder {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   filter: blur(5px);
   transition: opacity 0.3s ease;
 }
 
 .optimized-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 15px;
@@ -174,10 +321,6 @@
 .error-icon {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
 }
 
 .project-overlay {
@@ -420,29 +563,35 @@
 
 @media (max-width: 991px) {
   .project-image-container {
-    height: 200px;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+  }
+  
+  
+  /* Квадратные логотипы на планшетах */
+  .square-logo .project-image-container {
+    width: 250px !important; /* Фиксированная ширина равная высоте */
+    height: 250px !important; /* Фиксированная высота */
   }
   
   .project-image-container.personal-project {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 0 !important; /* Убираем отступы */
   }
   
   .project-card:has(.personal-project) {
     min-height: 400px;
-  }
-  
-  
-  .project-card:has(.personal-project) .card-body {
-    padding-left: 1.5rem;
   }
   
   .project-card:has(.personal-project) .col {
@@ -450,6 +599,29 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+  }
+  
+  /* Адаптивные стили для карточки Каммаркет */
+  .kammarket-card .project-image-container {
+    height: 250px;
+    aspect-ratio: 16/9;
+  }
+  
+  .kammarket-card .desktop-left-column {
+    gap: 1.5rem;
+  }
+  
+  .kammarket-card .project-title {
+    font-size: 1.4rem;
+  }
+  
+  /* Стили для полноширинных карточек */
+  .full-width-card .project-image-container {
+    height: 250px;
+  }
+  
+  .desktop-full-width-layout .project-image-container {
+    height: 250px;
   }
 }
 
@@ -459,30 +631,64 @@
   }
   
   .project-image-container {
-    height: 280px;
+    height: 200px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+  }
+  
+  /* Квадратные логотипы на мобильных */
+  .square-logo .project-image-container {
+    width: 100px !important; /* Еще больше уменьшаем ширину */
+    height: 100px !important; /* Еще больше уменьшаем высоту */
+    max-width: 100px !important;
+    min-width: 100px !important;
+    padding: 0 !important; /* Убираем все отступы */
+    margin: 0 auto !important; /* Центрируем */
   }
   
   .project-image-container.personal-project {
-    height: 350px;
-    width: 350px;
+    height: 200px;
+    width: 200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 15px;
+    padding: 0 !important; /* Убираем отступы */
+  }
+  
+  /* Обеспечиваем, чтобы изображения не выходили за границы на мобильных устройствах */
+  .project-image,
+  .optimized-image,
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0 !important; /* Убираем отступы */
+    margin: 0 !important; /* Убираем отступы */
+  }
+  
+  /* Специальные стили для персональных проектов на мобильных */
+  .personal-project .project-image,
+  .personal-project .optimized-image,
+  .personal-project .image-placeholder {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    object-fit: contain !important;
   }
   
   .project-card:has(.personal-project) {
     min-height: 450px;
-  }
-  
-  
-  .project-card:has(.personal-project) .card-body {
-    padding-left: 1rem;
   }
   
   .project-card:has(.personal-project) .col {
@@ -518,6 +724,82 @@
   .project-link {
     padding: 10px 20px;
     font-size: 1rem;
+  }
+  
+  /* Мобильные стили для карточки Каммаркет */
+  .kammarket-card {
+    transform: translateY(0);
+    margin-bottom: 2rem;
+  }
+  
+  .kammarket-card .project-image-container {
+    height: 200px;
+    aspect-ratio: 16/9;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .kammarket-card .project-title {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  
+  .kammarket-card .project-description {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .kammarket-card .project-buttons {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  
+  .kammarket-card .project-badges {
+    justify-content: center;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Стили для полноширинных карточек на мобильных */
+  .full-width-card .project-image-container {
+    height: 200px;
+    max-width: 356px; /* 200px высота * 16/9 соотношение сторон */
+  }
+  
+  .desktop-full-width-layout .project-image-container {
+    max-width: 356px; /* 200px высота * 16/9 соотношение сторон */
+    height: 200px;
+  }
+  
+  /* Переопределение для квадратных логотипов на мобильных */
+  .mobile-full-width-layout .square-logo.project-image-container,
+  .square-logo .mobile-full-width-layout .project-image-container,
+  .mobile-full-width-layout .square-logo .project-image-container,
+  .full-width-card .square-logo.project-image-container,
+  .square-logo .full-width-card .project-image-container,
+  .full-width-card.square-logo .project-image-container,
+  .desktop-full-width-layout .square-logo.project-image-container,
+  .square-logo .desktop-full-width-layout .project-image-container,
+  .desktop-full-width-layout .square-logo .project-image-container {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: 100px !important;
+    min-width: 100px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Специальные стили для изображений в квадратных логотипах на мобильных */
+  .square-logo .project-image,
+  .square-logo .optimized-image,
+  .square-logo .image-placeholder {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    object-fit: contain !important;
   }
 }
 
@@ -573,9 +855,9 @@
 }
 
 .full-width-image {
-  height: 400px;
+  height: 300px;
   object-fit: cover;
-  aspect-ratio: 1;
+  aspect-ratio: 16/9;
   border-radius: 15px;
 }
 
@@ -583,7 +865,7 @@
   .full-width-image {
     height: 300px;
     object-fit: cover;
-    aspect-ratio: 1;
+    aspect-ratio: 16/9;
   }
 }
 
@@ -594,16 +876,27 @@
 
 .full-width-card .project-image-container {
   height: 300px;
-  width: 300px;
+  max-width: 534px; /* 300px высота * 16/9 соотношение сторон */
   overflow: hidden;
   margin: 0 auto;
+}
+
+/* Переопределение для квадратных логотипов в полноширинных карточках */
+.full-width-card .square-logo.project-image-container,
+.square-logo .full-width-card .project-image-container,
+.full-width-card.square-logo .project-image-container {
+  width: 300px !important;
+  height: 300px !important;
+  max-width: 300px !important;
 }
 
 .full-width-card .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Изменено с cover на contain */
   object-position: center;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .full-width-card .card-body {
@@ -654,9 +947,19 @@
 
 .desktop-full-width-layout .project-image-container {
   width: 100%;
-  max-width: 300px;
+  max-width: 534px; /* 300px высота * 16/9 соотношение сторон */
   height: 300px;
   margin: 0 auto;
+}
+
+/* Переопределение для квадратных логотипов в десктопной версии */
+.desktop-full-width-layout .square-logo.project-image-container,
+.square-logo .desktop-full-width-layout .project-image-container,
+.desktop-full-width-layout .square-logo .project-image-container {
+  width: 300px !important;
+  height: 300px !important;
+  max-width: 300px !important;
+  min-width: 300px !important;
 }
 
 /* Мобильная версия - скрыта на десктопе */
@@ -715,8 +1018,8 @@
   }
   
   .full-width-card .project-image-container {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    max-width: 356px; /* 200px высота * 16/9 соотношение сторон */
     margin: 0 auto;
   }
 }
