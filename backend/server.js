@@ -46,7 +46,7 @@ ${formData.description}
 
     return { success: true, messageId: response.data.result.message_id };
   } catch (error) {
-    console.error('Ошибка отправки в Telegram:', error.response?.data || error.message);
+    console.error('Ошибка отправки в Telegram:', (error.response && error.response.data) || error.message);
     throw new Error('Не удалось отправить заявку в Telegram');
   }
 }
