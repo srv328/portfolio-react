@@ -1,0 +1,736 @@
+.contact-form-section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 1rem auto;
+  max-width: 1300px;
+  z-index: 1;
+}
+
+.contact-form-section.dark-mode {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.contact-form-section.light-mode {
+  background: rgba(255, 255, 255, 0.05);
+  color: #212529;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.contact-form-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.contact-form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-form-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-container {
+  background: transparent;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+/* Custom Select Styles */
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+}
+
+.custom-select.dark-mode {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.custom-select.light-mode {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+.custom-select:hover {
+  border-color: #00b4d8;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #00b4d8;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.25);
+}
+
+.custom-select.error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.custom-select-value {
+  flex: 1;
+  text-align: left;
+}
+
+.custom-select-value.placeholder {
+  opacity: 0.6;
+  color: inherit;
+}
+
+.custom-select-arrow {
+  color: #00b4d8;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+}
+
+.custom-select-arrow.open {
+  transform: rotate(180deg);
+}
+
+.custom-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  z-index: 1000;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.custom-select-dropdown.dark-mode {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.custom-select-dropdown.light-mode {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.custom-select-option {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: inherit;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-select-option:last-child {
+  border-bottom: none;
+}
+
+.custom-select-option:hover {
+  background: rgba(0, 180, 216, 0.1);
+  color: #00b4d8;
+}
+
+.custom-select-option.selected {
+  background: rgba(0, 180, 216, 0.2);
+  color: #00b4d8;
+  font-weight: 600;
+}
+
+.custom-select-option.selected:hover {
+  background: rgba(0, 180, 216, 0.3);
+}
+
+.form-icon {
+  color: #00b4d8;
+  font-size: 1.1rem;
+}
+
+.form-control-custom,
+.form-select-custom {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
+}
+
+.form-control-custom:focus::placeholder {
+  opacity: 0.4;
+}
+
+.form-control-custom.dark-mode,
+.form-select-custom.dark-mode {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.form-control-custom.light-mode,
+.form-select-custom.light-mode {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+.form-control-custom::placeholder {
+  opacity: 0.6;
+  color: inherit;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.contact-method-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.contact-method-option:hover {
+  border-color: #00b4d8;
+  background: rgba(0, 180, 216, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-method-option.selected {
+  border-color: #00b4d8;
+  background: rgba(0, 180, 216, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+.contact-method-option.error {
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.contact-method-icon {
+  color: #00b4d8;
+  font-size: 1.2rem;
+}
+
+.privacy-checkbox {
+  margin-top: 8px;
+}
+
+.privacy-checkbox .form-check-input {
+  margin-top: 0.3em;
+}
+
+.privacy-checkbox .form-check-label {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.privacy-link {
+  background: none;
+  border: none;
+  color: #00b4d8;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+  color: #0077b6;
+}
+
+.privacy-checkbox.error .form-check-label {
+  color: #dc3545;
+}
+
+.form-submit-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(135deg, #005f8a 0%, #0096c7 100%);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.success-modal .modal-content {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.success-modal.dark-mode .modal-content {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.success-modal.light-mode .modal-content {
+  background: #ffffff;
+  color: #333333;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+  color: white;
+}
+
+.success-title {
+  color: #00b4d8;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.success-button {
+  background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 30px;
+  font-weight: 600;
+}
+
+.success-button:hover {
+  background: linear-gradient(135deg, #0096c7 0%, #005f8a 100%);
+  transform: translateY(-1px);
+}
+
+.privacy-modal .modal-content {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.privacy-modal.dark-mode .modal-content {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.privacy-modal.light-mode .modal-content {
+  background: #ffffff;
+  color: #333333;
+}
+
+.privacy-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+  color: white;
+}
+
+.privacy-modal .modal-title {
+  font-weight: 700;
+}
+
+.privacy-content h5 {
+  color: #00b4d8;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.privacy-content h5:first-child {
+  margin-top: 0;
+}
+
+.privacy-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.privacy-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.privacy-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.privacy-date {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .contact-form-section {
+    padding: 60px 0;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .contact-form-title {
+    font-size: 2rem;
+  }
+
+  .contact-form-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-form-container {
+    padding: 25px;
+    margin: 0 15px;
+  }
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-method-option {
+    justify-content: center;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 16px 40px;
+  }
+
+  .custom-select {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .custom-select-option {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  .form-control-custom,
+  .form-select-custom {
+    padding: 10px 14px;
+  }
+
+  .contact-method-option {
+    padding: 10px 14px;
+  }
+}
+
+.contact-form .form-group {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.contact-form .form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contact-form .form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contact-form .form-group:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contact-form .form-group:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.contact-form .form-group:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.contact-form .form-group:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc3545;
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus,
+.contact-method-option:focus {
+  outline: none;
+}
+
+.contact-method-option:focus-visible {
+  outline: 2px solid #00b4d8;
+  outline-offset: 2px;
+}
+
+.submit-button:focus-visible {
+  outline: 2px solid #00b4d8;
+  outline-offset: 2px;
+}
+
+/* Отключение hover эффектов на сенсорных устройствах */
+@media (hover: none) and (pointer: coarse) {
+  .custom-select:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .custom-select.dark-mode:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .custom-select.light-mode:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .custom-select-option:hover {
+    background: transparent;
+    color: inherit;
+  }
+
+  .custom-select-option.selected:hover {
+    background: rgba(0, 180, 216, 0.2);
+    color: #00b4d8;
+  }
+
+  .contact-method-option:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
+  }
+
+  .contact-method-option.selected:hover {
+    border-color: #00b4d8;
+    background: rgba(0, 180, 216, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  }
+
+  .submit-button:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+    background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+  }
+
+  .submit-button:hover::before {
+    left: -100%;
+  }
+
+  .privacy-link:hover {
+    color: #00b4d8;
+  }
+
+  .form-control-custom:hover,
+  .form-select-custom:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .form-control-custom.dark-mode:hover,
+  .form-select-custom.dark-mode:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .form-control-custom.light-mode:hover,
+  .form-select-custom.light-mode:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Активные состояния для мобильных устройств */
+  .custom-select:active {
+    border-color: #00b4d8;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .custom-select-option:active {
+    background: rgba(0, 180, 216, 0.1);
+    color: #00b4d8;
+  }
+
+  .contact-method-option:active {
+    border-color: #00b4d8;
+    background: rgba(0, 180, 216, 0.1);
+    transform: scale(0.98);
+  }
+
+  .submit-button:active {
+    transform: scale(0.98);
+    background: linear-gradient(135deg, #005f8a 0%, #0096c7 100%);
+  }
+
+  .form-control-custom:active,
+  .form-select-custom:active {
+    border-color: #00b4d8;
+    background: rgba(255, 255, 255, 0.15);
+    color: inherit;
+  }
+}
+
+/* Улучшенные стили для полей ввода */
+.form-control-custom,
+.form-select-custom {
+  color: inherit !important;
+}
+
+.form-control-custom:not(:focus) {
+  color: inherit !important;
+}
+
+.form-control-custom:focus {
+  color: inherit !important;
+}
+
+/* Улучшенная подсветка при фокусе */
+.form-control-custom:focus,
+.form-select-custom:focus {
+  border-color: #00b4d8 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.25) !important;
+  background: rgba(0, 180, 216, 0.1) !important;
+}
+
+.custom-select:focus {
+  border-color: #00b4d8 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.25) !important;
+  background: rgba(0, 180, 216, 0.1) !important;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Nav, Offcanvas } from "react-bootstrap";
-import { FaTimes, FaUser, FaCode, FaProjectDiagram, FaBriefcase, FaSun, FaMoon } from "react-icons/fa";
-import { smoothScrollTo, smoothScrollToBottom } from "../utils/smoothScroll";
+import { FaTimes, FaUser, FaCode, FaProjectDiagram, FaBriefcase, FaSun, FaMoon, FaComments } from "react-icons/fa";
+import { smoothScrollTo } from "../utils/smoothScroll";
 import "./css/MobileNavigation.css";
 
 const MobileNavigation = ({ isDarkMode, toggleTheme, isOpen, onClose }) => {
@@ -21,8 +21,8 @@ const MobileNavigation = ({ isDarkMode, toggleTheme, isOpen, onClose }) => {
   }, [onClose]);
 
   const scrollToSection = (sectionId) => {
-    if (sectionId === 'contact') {
-      smoothScrollToBottom();
+    if (sectionId === 'contact' || sectionId === 'contact-form') {
+      smoothScrollTo("contact-form");
     } else {
       smoothScrollTo(sectionId);
     }
@@ -34,6 +34,7 @@ const MobileNavigation = ({ isDarkMode, toggleTheme, isOpen, onClose }) => {
     { id: "skills", label: "Навыки", icon: FaCode },
     { id: "experience", label: "Опыт", icon: FaBriefcase },
     { id: "projects", label: "Проекты", icon: FaProjectDiagram },
+    { id: "contact-form", label: "Связаться", icon: FaComments },
   ];
 
   if (!isMobile) {

@@ -11,8 +11,9 @@ import {
   FaBriefcase,
   FaProjectDiagram,
   FaBars,
+  FaComments,
 } from "react-icons/fa";
-import { smoothScrollTo, smoothScrollToBottom } from "../utils/smoothScroll";
+import { smoothScrollTo } from "../utils/smoothScroll";
 import "./css/Header.css";
 import { useEffect, useState } from "react";
 
@@ -29,8 +30,8 @@ const Header = ({ isDarkMode, toggleTheme, isScrolled, toggleMobileMenu }) => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    if (sectionId === "contact") {
-      smoothScrollToBottom();
+    if (sectionId === "contact" || sectionId === "contact-form") {
+      smoothScrollTo("contact-form");
     } else {
       smoothScrollTo(sectionId);
     }
@@ -44,6 +45,7 @@ const Header = ({ isDarkMode, toggleTheme, isScrolled, toggleMobileMenu }) => {
           { id: "skills", icon: FaCode, text: "Навыки" },
           { id: "experience", icon: FaBriefcase, text: "Опыт" },
           { id: "projects", icon: FaProjectDiagram, text: "Проекты" },
+          { id: "contact-form", icon: FaComments, text: "Связаться" },
         ].map(({ id, icon: Icon, text }) => (
           <Nav.Link
             onClick={() => scrollToSection(id)}

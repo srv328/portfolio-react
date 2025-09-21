@@ -5,6 +5,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import MobileNavigation from "./components/MobileNavigation";
 import ParticlesBackground from "./components/ParticlesBackground";
@@ -72,6 +73,9 @@ function App() {
         </section>
         <section id="projects" className="section projects-section">
           <Projects isDarkMode={isDarkMode} />
+        </section>
+        <section id="contact-form" className="section contact-form-section">
+          <ContactForm isDarkMode={isDarkMode} />
         </section>
       </main>
       <section id="contact">
