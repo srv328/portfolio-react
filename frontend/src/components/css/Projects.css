@@ -885,9 +885,9 @@
 .full-width-card .square-logo.project-image-container,
 .square-logo .full-width-card .project-image-container,
 .full-width-card.square-logo .project-image-container {
-  width: 300px !important;
-  height: 300px !important;
-  max-width: 300px !important;
+  width: 260px !important;
+  height: 260px !important;
+  max-width: 260px !important;
 }
 
 .full-width-card .project-image {
