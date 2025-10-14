@@ -209,6 +209,7 @@
   margin-bottom: 0.5rem;
   line-height: 1.4;
   position: relative;
+  text-align: left;
 }
 
 .timeline-achievements li::marker {

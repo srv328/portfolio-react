@@ -59,15 +59,30 @@ const Experience = ({ isDarkMode }) => {
     },
     {
       type: "work",
+      title: "Frontend разработчик",
+      company: "НИУ ВШЭ",
+      period: "Октябрь 2025 - настоящее время",
+      description:
+        "Разработка фронтенд-приложений на Vue.js и Nuxt.js. Создание современных пользовательских интерфейсов для научных и образовательных проектов.",
+      technologies: ["Vue.js", "Nuxt.js", "TypeScript", "SCSS", "JavaScript"],
+      icon: FaBriefcase,
+      achievements: [
+        "Поддержка проекта НИУ ВШЭ ИМЛИ РАН",
+        "Поддержка проекта Sociolit",
+        "Применяю современные подходы к фронтенд-разработке",
+      ],
+    },
+    {
+      type: "work",
       title: "Full-stack разработчик (Фриланс)",
       company: "Удаленная работа",
       period: "2023 - настоящее время",
       description:
         "Разработка веб-приложений и мобильных приложений для клиентов. Специализация на React, Node.js, Python и блокчейн технологиях.",
-      technologies: ["React", "Node.js", "Python", "Blockchain", "Web3"],
+      technologies: ["Vue.js", "Nuxt.js", "TypeScript", "JavaScript", "Python", "Blockchain", "Web3"],
       icon: FaBriefcase,
       achievements: [
-        "Разработал 3 коммерческих проекта",
+        "Разработал 4 коммерческих проекта",
         "Постоянно поддерживаю и развиваю проекты клиентов",
         "Разработал агрегатор недвижимости",
         "Создал онлайн-магазин с полным функционалом",
