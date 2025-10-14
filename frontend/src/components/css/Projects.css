@@ -12,11 +12,11 @@
   flex-direction: column;
 }
 
-/* Специальные стили для карточки Каммаркет */
 .kammarket-card {
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(0, 180, 216, 0.4);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45), 0 0 15px 5px rgba(0, 180, 216, 0.2);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45),
+    0 0 15px 5px rgba(0, 180, 216, 0.2);
   position: relative;
   z-index: 2;
   animation: kammarket-glow 3s infinite alternate;
@@ -26,21 +26,27 @@
 
 @keyframes kammarket-glow {
   0% {
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45), 0 0 15px 5px rgba(0, 180, 216, 0.2);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45),
+      0 0 15px 5px rgba(0, 180, 216, 0.2);
   }
   100% {
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45), 0 0 25px 8px rgba(0, 180, 216, 0.4);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45),
+      0 0 25px 8px rgba(0, 180, 216, 0.4);
   }
 }
 
 .kammarket-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 216, 0.15) 0%,
+    transparent 60%
+  );
   opacity: 1;
   transform: scale(1);
   z-index: -1;
@@ -66,7 +72,7 @@
 }
 
 .kammarket-card .project-title::after {
-  content: '★';
+  content: "★";
   position: absolute;
   right: 0;
   top: 50%;
@@ -95,12 +101,12 @@
 }
 
 .kammarket-card .project-image-container {
-  height: 300px; /* Стандартная высота для согласованности */
+  height: 300px;
   max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.03); /* Легкий фон для контейнера */
+  background-color: rgba(0, 0, 0, 0.03);
   border-radius: 15px;
   overflow: hidden;
   margin: 0 auto 1.5rem auto;
@@ -123,20 +129,18 @@
   margin-bottom: 1rem;
 }
 
-/* Добавляем класс для квадратных логотипов - с высоким приоритетом */
 .square-logo .project-image-container {
   background-color: rgba(0, 0, 0, 0.02);
-  width: 300px !important; /* Фиксированная ширина равная высоте */
-  height: 300px !important; /* Фиксированная высота */
-  aspect-ratio: auto !important; /* Отключаем автоматическое соотношение сторон */
-  max-width: 300px !important; /* Ограничиваем максимальную ширину */
-  min-width: 300px !important; /* Устанавливаем минимальную ширину */
-  padding: 0 !important; /* Убираем отступы */
-  margin: 0 auto !important; /* Центрируем */
-  box-sizing: border-box !important; /* Учитываем границы в размерах */
+  width: 300px !important;
+  height: 300px !important;
+  aspect-ratio: auto !important;
+  max-width: 300px !important;
+  min-width: 300px !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
 }
 
-/* Специальные стили для карточек с персональными проектами */
 .project-card:has(.personal-project) {
   display: flex;
   flex-direction: row;
@@ -146,13 +150,17 @@
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, transparent 50%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 216, 0.1) 0%,
+    transparent 50%
+  );
   opacity: 0;
   transition: opacity 0.8s ease, transform 1.2s ease;
   transform: scale(0.5);
@@ -181,30 +189,27 @@
 
 .project-image-container {
   position: relative;
-  overflow: hidden; /* Важно! Скрывает всё, что выходит за пределы контейнера */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 350px; /* Стандартная высота для всех контейнеров изображений */
   border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.03); /* Легкий фон для контейнера */
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* Специальные стили для персональных проектов */
 .project-image-container.personal-project {
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  height: 300px; /* Та же высота для согласованности */
-  width: 300px; /* Фиксированная ширина */
-  background-color: rgba(0, 0, 0, 0.03); /* Легкий фон для контейнера */
-  border-radius: 15px; /* Скругление углов */
-  padding: 0 !important; /* Убираем отступы */
+  height: 300px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 15px;
+  padding: 0 !important;
 }
 
-/* Стили для текстового контента персональных проектов */
 .project-card:has(.personal-project) .card-body {
   display: flex;
   flex-direction: column;
@@ -214,7 +219,6 @@
   padding-left: 2rem;
 }
 
-/* Стили для колонок в персональных проектах */
 .project-card:has(.personal-project) .col {
   display: flex;
   align-items: center;
@@ -222,7 +226,6 @@
   height: 100%;
 }
 
-/* Унификация контента в карточках */
 .project-card .card-body {
   display: flex;
   flex-direction: column;
@@ -241,7 +244,6 @@
   margin-bottom: 0;
 }
 
-/* Выравнивание элементов в карточках */
 .project-card .project-technologies {
   margin-bottom: 1rem;
 }
@@ -253,23 +255,22 @@
 .project-image {
   width: auto;
   height: auto;
-  max-width: 100%; /* Уменьшаем до 80%, чтобы точно не выходило за границы */
-  max-height: 100%; /* Уменьшаем до 80%, чтобы точно не выходило за границы */
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
   transition: transform 0.5s ease;
 }
 
-/* Стили для квадратных логотипов */
 .square-logo .project-image {
   max-width: 100% !important;
   max-height: 100% !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
-  aspect-ratio: 1/1 !important; /* Сохраняем квадратные пропорции */
-  padding: 0 !important; /* Убираем все отступы */
-  margin: 0 !important; /* Убираем все отступы */
+  aspect-ratio: 1/1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .optimized-image-container {
@@ -395,7 +396,7 @@
 }
 
 .project-title::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 3px;
@@ -422,6 +423,7 @@
 }
 
 .project-concept {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   background: rgba(0, 180, 216, 0.05);
   padding: 0.8rem;
@@ -458,7 +460,8 @@
   font-size: 0.85rem;
 }
 
-.project-date, .project-role {
+.project-date,
+.project-role {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -570,14 +573,12 @@
     background-color: rgba(0, 0, 0, 0.03);
     overflow: hidden;
   }
-  
-  
-  /* Квадратные логотипы на планшетах */
+
   .square-logo .project-image-container {
-    width: 250px !important; /* Фиксированная ширина равная высоте */
-    height: 250px !important; /* Фиксированная высота */
+    width: 250px !important;
+    height: 250px !important;
   }
-  
+
   .project-image-container.personal-project {
     height: 250px;
     width: 250px;
@@ -587,39 +588,37 @@
     justify-content: center;
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 0.03);
-    padding: 0 !important; /* Убираем отступы */
+    padding: 0 !important;
   }
-  
+
   .project-card:has(.personal-project) {
     min-height: 400px;
   }
-  
+
   .project-card:has(.personal-project) .col {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
   }
-  
-  /* Адаптивные стили для карточки Каммаркет */
+
   .kammarket-card .project-image-container {
     height: 250px;
     aspect-ratio: 16/9;
   }
-  
+
   .kammarket-card .desktop-left-column {
     gap: 1.5rem;
   }
-  
+
   .kammarket-card .project-title {
     font-size: 1.4rem;
   }
-  
-  /* Стили для полноширинных карточек */
+
   .full-width-card .project-image-container {
     height: 250px;
   }
-  
+
   .desktop-full-width-layout .project-image-container {
     height: 250px;
   }
@@ -629,7 +628,7 @@
   .project-card {
     margin-bottom: 1.5rem;
   }
-  
+
   .project-image-container {
     height: 200px;
     border-radius: 15px;
@@ -639,17 +638,16 @@
     background-color: rgba(0, 0, 0, 0.03);
     overflow: hidden;
   }
-  
-  /* Квадратные логотипы на мобильных */
+
   .square-logo .project-image-container {
-    width: 100px !important; /* Еще больше уменьшаем ширину */
-    height: 100px !important; /* Еще больше уменьшаем высоту */
+    width: 100px !important;
+    height: 100px !important;
     max-width: 100px !important;
     min-width: 100px !important;
-    padding: 0 !important; /* Убираем все отступы */
-    margin: 0 auto !important; /* Центрируем */
+    padding: 0 !important;
+    margin: 0 auto !important;
   }
-  
+
   .project-image-container.personal-project {
     height: 200px;
     width: 200px;
@@ -660,21 +658,19 @@
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 0.03);
     border-radius: 15px;
-    padding: 0 !important; /* Убираем отступы */
+    padding: 0 !important;
   }
-  
-  /* Обеспечиваем, чтобы изображения не выходили за границы на мобильных устройствах */
+
   .project-image,
   .optimized-image,
   .image-placeholder {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 0 !important; /* Убираем отступы */
-    margin: 0 !important; /* Убираем отступы */
+    padding: 0 !important;
+    margin: 0 !important;
   }
-  
-  /* Специальные стили для персональных проектов на мобильных */
+
   .personal-project .project-image,
   .personal-project .optimized-image,
   .personal-project .image-placeholder {
@@ -686,92 +682,89 @@
     margin: 0 !important;
     object-fit: contain !important;
   }
-  
+
   .project-card:has(.personal-project) {
     min-height: 450px;
   }
-  
+
   .project-card:has(.personal-project) .col {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
   }
-  
+
   .project-overlay {
     opacity: 1;
     background: rgba(0, 0, 0, 0.5);
   }
-  
+
   .project-title {
     font-size: 1.2rem;
   }
-  
+
   .projects-main-title {
     font-size: 2rem;
   }
-  
+
   .section-subtitle {
     font-size: 1.5rem;
   }
-  
+
   .project-links {
     flex-direction: row;
     justify-content: center;
     gap: 15px;
   }
-  
+
   .project-link {
     padding: 10px 20px;
     font-size: 1rem;
   }
-  
-  /* Мобильные стили для карточки Каммаркет */
+
   .kammarket-card {
     transform: translateY(0);
     margin-bottom: 2rem;
   }
-  
+
   .kammarket-card .project-image-container {
     height: 200px;
     aspect-ratio: 16/9;
     margin: 0 auto 1rem auto;
   }
-  
+
   .kammarket-card .project-title {
     font-size: 1.3rem;
     text-align: center;
     margin-bottom: 0.8rem;
   }
-  
+
   .kammarket-card .project-description {
     font-size: 0.9rem;
     text-align: center;
     margin-bottom: 1rem;
   }
-  
+
   .kammarket-card .project-buttons {
     justify-content: center;
     gap: 0.8rem;
   }
-  
+
   .kammarket-card .project-badges {
     justify-content: center;
     margin-bottom: 0.8rem;
   }
-  
-  /* Стили для полноширинных карточек на мобильных */
+
   .full-width-card .project-image-container {
     height: 200px;
-    max-width: 356px; /* 200px высота * 16/9 соотношение сторон */
+    max-width: 356px;
   }
-  
+
   .desktop-full-width-layout .project-image-container {
-    max-width: 356px; /* 200px высота * 16/9 соотношение сторон */
+    max-width: 356px;
     height: 200px;
   }
-  
-  /* Переопределение для квадратных логотипов на мобильных */
+
   .mobile-full-width-layout .square-logo.project-image-container,
   .square-logo .mobile-full-width-layout .project-image-container,
   .mobile-full-width-layout .square-logo .project-image-container,
@@ -788,8 +781,7 @@
     padding: 0 !important;
     margin: 0 auto !important;
   }
-  
-  /* Специальные стили для изображений в квадратных логотипах на мобильных */
+
   .square-logo .project-image,
   .square-logo .optimized-image,
   .square-logo .image-placeholder {
@@ -815,7 +807,7 @@
 }
 
 .projects-main-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -838,7 +830,7 @@
 
 .section-subtitle::before,
 .section-subtitle::after {
-  content: '•';
+  content: "•";
   color: #00b4d8;
   position: absolute;
   top: 50%;
@@ -876,12 +868,11 @@
 
 .full-width-card .project-image-container {
   height: 300px;
-  max-width: 534px; /* 300px высота * 16/9 соотношение сторон */
+  max-width: 534px;
   overflow: hidden;
   margin: 0 auto;
 }
 
-/* Переопределение для квадратных логотипов в полноширинных карточках */
 .full-width-card .square-logo.project-image-container,
 .square-logo .full-width-card .project-image-container,
 .full-width-card.square-logo .project-image-container {
@@ -893,7 +884,7 @@
 .full-width-card .project-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Изменено с cover на contain */
+  object-fit: contain;
   object-position: center;
   max-width: 100%;
   max-height: 100%;
@@ -917,7 +908,6 @@
   flex: 1;
 }
 
-/* Выравнивание контента в полной ширине карточек */
 .full-width-card .project-features {
   flex: 1;
   display: flex;
@@ -929,7 +919,6 @@
   margin-bottom: 0;
 }
 
-/* Десктопная версия - 2 колонки: картинка+доп материалы слева, описание справа */
 .desktop-full-width-layout {
   display: block;
 }
@@ -947,12 +936,11 @@
 
 .desktop-full-width-layout .project-image-container {
   width: 100%;
-  max-width: 534px; /* 300px высота * 16/9 соотношение сторон */
+  max-width: 534px;
   height: 300px;
   margin: 0 auto;
 }
 
-/* Переопределение для квадратных логотипов в десктопной версии */
 .desktop-full-width-layout .square-logo.project-image-container,
 .square-logo .desktop-full-width-layout .project-image-container,
 .desktop-full-width-layout .square-logo .project-image-container {
@@ -962,33 +950,30 @@
   min-width: 300px !important;
 }
 
-/* Мобильная версия - скрыта на десктопе */
 .mobile-full-width-layout {
   display: none;
 }
 
 @media (max-width: 991px) {
-  /* Скрываем десктопную версию на планшетах */
   .desktop-full-width-layout {
     display: none;
   }
-  
-  /* Показываем мобильную версию на планшетах */
+
   .mobile-full-width-layout {
     display: block;
   }
-  
+
   .full-width-card .row {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .full-width-card .col {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .full-width-card .project-image-container {
     height: 300px;
     width: 300px;
@@ -997,34 +982,31 @@
 }
 
 @media (max-width: 768px) {
-  /* Скрываем десктопную версию на мобильных */
   .desktop-full-width-layout {
     display: none;
   }
-  
-  /* Показываем мобильную версию на мобильных */
+
   .mobile-full-width-layout {
     display: block;
   }
-  
+
   .full-width-card .row {
     align-items: center;
   }
-  
+
   .full-width-card .col {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .full-width-card .project-image-container {
     height: 200px;
-    max-width: 356px; /* 200px высота * 16/9 соотношение сторон */
+    max-width: 356px;
     margin: 0 auto;
   }
 }
 
-/* Стили для дополнительных ссылок */
 .project-media-links {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -1059,13 +1041,17 @@
 }
 
 .media-link::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.1),
+    rgba(0, 123, 255, 0.05)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -1131,7 +1117,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Темная тема */
 .media-link.dark {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.1);
@@ -1151,7 +1136,6 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Светлая тема */
 .media-link.light {
   background: rgba(0, 0, 0, 0.02);
   border-color: rgba(0, 0, 0, 0.1);
@@ -1171,31 +1155,30 @@
   color: rgba(51, 51, 51, 0.8);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .media-links-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  
+
   .media-link {
     padding: 0.75rem;
   }
-  
+
   .media-link-content {
     gap: 0.75rem;
   }
-  
+
   .media-link-icon {
     width: 35px;
     height: 35px;
     font-size: 1rem;
   }
-  
+
   .media-link-title {
     font-size: 0.95rem;
   }
-  
+
   .media-link-description {
     font-size: 0.8rem;
   }
@@ -1206,23 +1189,23 @@
     margin-top: 1rem;
     padding-top: 1rem;
   }
-  
+
   .project-media-links h6 {
     font-size: 1rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .media-link {
     padding: 0.625rem;
   }
-  
+
   .media-link-content {
     gap: 0.625rem;
   }
-  
+
   .media-link-icon {
     width: 32px;
     height: 32px;
     font-size: 0.9rem;
   }
-} 
+}

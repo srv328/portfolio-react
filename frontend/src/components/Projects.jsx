@@ -2,12 +2,19 @@ import React from "react";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { BiCalendar, BiCodeAlt } from "react-icons/bi";
-import { FaExternalLinkAlt, FaGithub, FaPlay, FaNewspaper, FaTelegram } from "react-icons/fa";
+import {
+  FaExternalLinkAlt,
+  FaGithub,
+  FaPlay,
+  FaNewspaper,
+  FaTelegram,
+} from "react-icons/fa";
 import OptimizedImage from "./OptimizedImage";
 import "./css/Projects.css";
 
 const Projects = ({ isDarkMode }) => {
   const commercialProjects = [
+    
     {
       title: "Онлайн-магазин",
       description:
@@ -27,12 +34,12 @@ const Projects = ({ isDarkMode }) => {
       role: "Full-stack разработчик",
       features: [
         "Четыре типа пользователей: администратор, продавец, покупатель, курьер",
-		"Корзина покупок с сохранением между сессиями",
+        "Корзина покупок с сохранением между сессиями",
         "Личный кабинет пользователя с сохранением между сессиями",
         "Автоматическая генерация sitemap.xml для SEO оптимизации",
-		"Большой функционал для администратора",
-		"Отчеты о продажах в админ-панели",
-		"Автоматические дампы базы данных",
+        "Большой функционал для администратора",
+        "Отчеты о продажах в админ-панели",
+        "Автоматические дампы базы данных",
       ],
       mediaLinks: [
         {
@@ -40,15 +47,15 @@ const Projects = ({ isDarkMode }) => {
           url: "https://t.me/radiokamchatka/8020",
           platform: "Telegram",
           description: "Рассказ о создании и развитии проекта",
-          icon: "📻"
+          icon: "📻",
         },
         {
           title: "Статья в Масс-медиа Камчатка",
           url: "https://t.me/massmediakam/22809",
           platform: "Telegram",
           description: "Подробный обзор проекта и его возможностей",
-          icon: "📰"
-        }
+          icon: "📰",
+        },
       ],
       isKammarket: true,
     },
@@ -135,6 +142,47 @@ const Projects = ({ isDarkMode }) => {
         "Поддержка свайпов на мобильных устройствах",
         "Детализированные расчеты по странам с учетом специфики (JPY, KRW, CNY, USD, EUR)",
         "Система fallback для расчетов при недоступности внешних API",
+      ],
+	  isAutopodbor: true,
+    },
+	{
+      title: "Sociolit",
+      description:
+        "Портал для проведения исследований и анализа данных. Современная платформа с интуитивным интерфейсом.",
+      image: "/img/projects/sociolit.png",
+      link: "https://sociolit.ru",
+      concept:
+        "Платформа для исследований с возможностью анализа текста произведения, сбора данных и анализа данных.",
+      technologies: ["Vue.js", "TypeScript", "SCSS", "JavaScript", "Nuxt.js"],
+      completionDate: "В разработке",
+      role: "Frontend разработчик",
+      features: [
+        "Современный адаптивный интерфейс",
+        "Интерактивные формы создания опросов",
+        "Визуализация данных и статистики",
+        "Система управления пользователями",
+        "Экспорт результатов в различных форматах",
+        "Интеграция с аналитическими инструментами",
+      ],
+    },
+    {
+      title: "Interactive Avant-garde",
+      description:
+        "Интерактивная платформа для ИМЛИ РАН по изучению авангардного искусства. Цифровая коллекция с интерактивными элементами и образовательными материалами.",
+      image: "/img/projects/interactive-avant-garde.png",
+      link: "https://interactive-avant-garde.ru",
+      concept: "Интерактивное научное издание.",
+      technologies: ["Vue.js", "TypeScript", "SCSS", "JavaScript", "Nuxt.js"],
+      completionDate: "В разработке",
+      role: "Frontend разработчик",
+      features: [
+        "Просмотр найденных записных книжек: перейдите по интересующей записи для просмотра деталей.",
+        "Цифровая расшифровка текста записной книжки.",
+        "Поиск по тексту: находите нужные слова и фразы в расшифровке.",
+        "Функция 'Просмотреть все' — отображает все найденные в тексте слова.",
+        "Переход на определенную страницу по номеру.",
+        "Динамическая транскрипция, включая зачёркивания автора.",
+		"Предоставляется возможность детального просмотра сканированной копии записной книжки."
       ],
     },
   ];
@@ -263,7 +311,7 @@ const Projects = ({ isDarkMode }) => {
         "Стеклянный морфизм для элементов интерфейса",
       ],
       isPersonalProject: true,
-	  isPortfolio: true,
+      isPortfolio: true,
     },
   ];
 
@@ -342,11 +390,11 @@ const Projects = ({ isDarkMode }) => {
 
     const getIcon = (platform) => {
       switch (platform) {
-        case 'Telegram':
+        case "Telegram":
           return <FaTelegram className="media-icon" />;
-        case 'YouTube':
+        case "YouTube":
           return <FaPlay className="media-icon" />;
-        case 'Article':
+        case "Article":
           return <FaNewspaper className="media-icon" />;
         default:
           return <FaExternalLinkAlt className="media-icon" />;
@@ -368,7 +416,7 @@ const Projects = ({ isDarkMode }) => {
               href={mediaLink.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`media-link ${isDarkMode ? 'dark' : 'light'}`}
+              className={`media-link ${isDarkMode ? "dark" : "light"}`}
               variants={featureItemAnimation}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -379,7 +427,9 @@ const Projects = ({ isDarkMode }) => {
                 </div>
                 <div className="media-link-text">
                   <div className="media-link-title">{mediaLink.title}</div>
-                  <div className="media-link-description">{mediaLink.description}</div>
+                  <div className="media-link-description">
+                    {mediaLink.description}
+                  </div>
                 </div>
               </div>
             </motion.a>
@@ -391,20 +441,29 @@ const Projects = ({ isDarkMode }) => {
 
   // Общий компонент для отображения карточки проекта
   const ProjectCard = ({ project, index, isLast, totalCount }) => {
-    const isFullWidth = (isLast && totalCount % 2 !== 1) || project.isKammarket || project.isPortfolio;
+    const isFullWidth =
+      project.isKammarket ||
+      project.isPortfolio ||
+	  project.isAutopodbor;
 
     const cardContent = (
       <>
         {isFullWidth ? (
           <>
-            {/* Десктопная версия - 2 колонки: картинка+доп материалы слева, описание справа */}
             <div className="desktop-full-width-layout">
               <Row className="g-0">
                 <Col lg={6} md={12}>
                   <div className="desktop-left-column">
-                    <div className={`project-image-container full-width-image ${
-                      project.isKammarket || project.isPortfolio || project.title === "Владивосток Авто - Импорт автомобилей" ? 'square-logo' : ''
-                    }`}>
+                    <div
+                      className={`project-image-container full-width-image ${
+                        project.isKammarket ||
+                        project.isPortfolio ||
+                        project.title ===
+                          "Владивосток Авто - Импорт автомобилей"
+                          ? "square-logo"
+                          : ""
+                      }`}
+                    >
                       <OptimizedImage
                         src={project.image}
                         alt={project.title}
@@ -435,11 +494,14 @@ const Projects = ({ isDarkMode }) => {
                         </div>
                       </div>
                     </div>
-                    
-                    <MediaLinks mediaLinks={project.mediaLinks} isDarkMode={isDarkMode} />
+
+                    <MediaLinks
+                      mediaLinks={project.mediaLinks}
+                      isDarkMode={isDarkMode}
+                    />
                   </div>
                 </Col>
-                
+
                 <Col lg={6} md={12}>
                   <Card.Body>
                     <motion.div
@@ -467,7 +529,10 @@ const Projects = ({ isDarkMode }) => {
                         <p>{project.concept}</p>
                       </motion.div>
 
-                      <motion.div className="project-meta" variants={metaAnimation}>
+                      <motion.div
+                        className="project-meta"
+                        variants={metaAnimation}
+                      >
                         <div className="project-date">
                           <BiCalendar className="meta-icon" />
                           <span>{project.completionDate}</span>
@@ -507,14 +572,20 @@ const Projects = ({ isDarkMode }) => {
                 </Col>
               </Row>
             </div>
-            
+
             {/* Мобильная версия - старая структура */}
             <div className="mobile-full-width-layout">
               <Row className="g-0">
                 <Col lg={6} md={12}>
-                  <div className={`project-image-container full-width-image ${
-                    project.isKammarket || project.isPortfolio || project.title === "Владивосток Авто - Импорт автомобилей" ? 'square-logo' : ''
-                  }`}>
+                  <div
+                    className={`project-image-container full-width-image ${
+                      project.isKammarket ||
+                      project.isPortfolio ||
+                      project.title === "Владивосток Авто - Импорт автомобилей"
+                        ? "square-logo"
+                        : ""
+                    }`}
+                  >
                     <OptimizedImage
                       src={project.image}
                       alt={project.title}
@@ -573,7 +644,10 @@ const Projects = ({ isDarkMode }) => {
                         <p>{project.concept}</p>
                       </motion.div>
 
-                      <motion.div className="project-meta" variants={metaAnimation}>
+                      <motion.div
+                        className="project-meta"
+                        variants={metaAnimation}
+                      >
                         <div className="project-date">
                           <BiCalendar className="meta-icon" />
                           <span>{project.completionDate}</span>
@@ -609,7 +683,10 @@ const Projects = ({ isDarkMode }) => {
                         </ul>
                       </motion.div>
 
-                      <MediaLinks mediaLinks={project.mediaLinks} isDarkMode={isDarkMode} />
+                      <MediaLinks
+                        mediaLinks={project.mediaLinks}
+                        isDarkMode={isDarkMode}
+                      />
                     </motion.div>
                   </Card.Body>
                 </Col>
@@ -618,9 +695,17 @@ const Projects = ({ isDarkMode }) => {
           </>
         ) : (
           <>
-            <div className={`project-image-container ${project.isPersonalProject ? 'personal-project' : ''} ${
-              project.isKammarket || project.isPortfolio || project.title === "Владивосток Авто - Импорт автомобилей" ? 'square-logo' : ''
-            }`}>
+            <div
+              className={`project-image-container ${
+                project.isPersonalProject ? "personal-project" : ""
+              } ${
+                project.isKammarket ||
+                project.isPortfolio ||
+                project.title === "Владивосток Авто - Импорт автомобилей"
+                  ? "square-logo"
+                  : ""
+              }`}
+            >
               <OptimizedImage
                 src={project.image}
                 alt={project.title}
@@ -713,7 +798,10 @@ const Projects = ({ isDarkMode }) => {
                   </ul>
                 </motion.div>
 
-                <MediaLinks mediaLinks={project.mediaLinks} isDarkMode={isDarkMode} />
+                <MediaLinks
+                  mediaLinks={project.mediaLinks}
+                  isDarkMode={isDarkMode}
+                />
               </motion.div>
             </Card.Body>
           </>
