@@ -49,6 +49,10 @@ const skillsData = {
         badge: "/img/frontend/vue.js-35495e.svg",
       },
       {
+        name: "Nuxt.js",
+        badge: "/img/frontend/nuxt.svg",
+      },
+      {
         name: "Next JS",
         badge: "/img/frontend/Next-black.svg",
       },
